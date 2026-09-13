@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elas em rede | Login</title>
+    <link rel="stylesheet" href="logincadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="page">
+        <section class="card login-card">
+            <div class="welcome">
+                <img src="logo.png" alt="Logo do Elas em Rede" class="logo">
+                <h1>Seja bem-vindo(a)</h1>
+                <p>Nosso projeto tem como objetivo de incentivar<br>o empreendedorismo feminino, criar ideias<br>inovadoras e muito mais !!!</p>
+            </div>
+
+            <div class="login-panel">
+
+                <h2>Login</h2>
+
+                <form id="loginForm">
+
+                    <label for="email">Digite seu e-mail:</label>
+                    <input type="email" id="email" required>
+
+                    <label for="senha">Digite sua senha:</label>
+                    <input type="password" id="senha" required>
+
+                    <button class="main-button" type="submit">
+            ENTRAR
+          </button>
+
+                    <p class="register-text">
+                        Se você é novo,
+                        <a href="cadastro.html">Cadastrar-se</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+            <script>
+                document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+                    event.preventDefault();
+
+                    const email = document.getElementById("email").value.trim();
+                    const senha = document.getElementById("senha").value;
+
+                    const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+                    if (!usuario) {
+                        alert("Você ainda não fez um cadastro!");
+                        return;
+                    }
+
+                    if (email === usuario.email && senha === usuario.senha) {
+
+                        localStorage.setItem("usuarioLogado", "true");
+
+                        window.location.href = "Home.html";
+
+                    } else {
+
+                        alert("E-mail ou senha incorretos!");
+
+                    }
+
+                });
+            </script>
+
+
+        </section>
+    </main>
+
+
+</body>
+
+</html>

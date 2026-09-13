@@ -1,0 +1,1117 @@
+
+
+
+/* =========================================================
+   01. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #40373c;
+    background: radial-gradient( circle at 8% 5%, rgba(255, 255, 255, .72), transparent 22%), radial-gradient( circle at 92% 90%, rgba(255, 255, 255, .35), transparent 24%), linear-gradient( 135deg, #efa4c4 0%, #f1adca 28%, #f5bdca 54%, #f7d0c2 78%, #f6ddd0 100%);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   02. VARIÁVEIS
+========================================================= */
+
+:root {
+    --rosa-50: #fff7f9;
+    --rosa-100: #fcecef;
+    --rosa-200: #f8d5e0;
+    --rosa-300: #efb6c7;
+    --rosa-400: #e391ae;
+    --rosa-500: #d16e92;
+    --rosa-600: #b95b7d;
+    --lilac-50: #faf7fc;
+    --lilac-100: #f2eaf5;
+    --lilac-200: #e5d6e9;
+    --lilac-300: #c9a4d1;
+    --lilac-400: #b38bc0;
+    --lilac-500: #9670a4;
+    --lilac-600: #7d5b8c;
+    --peach: #f6d2c5;
+    --peach-strong: #efb9aa;
+    --cream: #fffdf9;
+    --cream-2: #fff7ee;
+    --ink: #3d3439;
+    --ink-soft: #5e5158;
+    --gray: #8d7f86;
+    --gray-light: #b2a5ab;
+    --white: #ffffff;
+    --line: rgba(83, 61, 72, .12);
+    --line-strong: rgba(83, 61, 72, .20);
+    --shadow-xs: 0 5px 18px rgba(74, 45, 59, .05);
+    --shadow-sm: 0 12px 34px rgba(74, 45, 59, .08);
+    --shadow-md: 0 20px 55px rgba(74, 45, 59, .12);
+    --shadow-lg: 0 35px 100px rgba(53, 31, 42, .18);
+    --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* =========================================================
+   03. FUNDO DECORATIVO
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 690px;
+    height: 690px;
+    right: -325px;
+    top: -325px;
+    border: 58px solid rgba(220, 109, 157, .15);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 520px;
+    height: 520px;
+    left: -335px;
+    bottom: -345px;
+    border: 45px solid rgba(255, 247, 207, .27);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* =========================================================
+   04. PÁGINA
+========================================================= */
+
+.page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    animation: pageEnter .75s var(--ease) both;
+}
+
+.page::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: 5%;
+    top: 8%;
+    border-radius: 50%;
+    background: radial-gradient( circle, rgba(207, 140, 202, .20), transparent 70%);
+    filter: blur(10px);
+    pointer-events: none;
+    animation: floatingGlow 7s ease-in-out infinite;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatingGlow {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+
+/* =========================================================
+   05. CARD BASE
+========================================================= */
+
+.card {
+    position: relative;
+    z-index: 2;
+    width: min(1120px, 100%);
+    min-height: 500px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .70);
+    border-radius: 38px;
+    background: rgba(255, 250, 244, .78);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================================================
+   06. LOGIN — ESTRUTURA
+========================================================= */
+
+.login-card {
+    display: grid;
+    grid-template-columns: 1.12fr .88fr;
+    min-height: 600px;
+}
+
+
+/* =========================================================
+   07. LOGIN — LADO DE BOAS-VINDAS
+========================================================= */
+
+.welcome {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px;
+    background: linear-gradient( 145deg, rgba(255, 250, 246, .96), rgba(249, 230, 237, .92));
+}
+
+
+/* círculo maior */
+
+.welcome::before {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    right: -180px;
+    bottom: -180px;
+    border: 34px solid rgba(190, 132, 186, .10);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+/* círculo menor */
+
+.welcome::after {
+    content: "";
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    right: 12%;
+    top: 9%;
+    border: 17px solid rgba(224, 134, 166, .10);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   08. LOGO DO LOGIN
+========================================================= */
+
+.logo {
+    position: relative;
+    z-index: 3;
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 28px;
+    filter: drop-shadow( 0 10px 18px rgba(100, 54, 75, .13));
+    animation: logoEnter .9s var(--ease) both;
+}
+
+@keyframes logoEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(.93);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   09. TÍTULO DE BOAS-VINDAS
+========================================================= */
+
+.welcome h1 {
+    position: relative;
+    z-index: 3;
+    max-width: 580px;
+    color: var(--ink);
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(55px, 6vw, 80px);
+    font-weight: 400;
+    line-height: .95;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 14px rgba(88, 52, 69, .06);
+}
+
+
+/* =========================================================
+   10. TEXTO DE BOAS-VINDAS
+========================================================= */
+
+.welcome p {
+    position: relative;
+    z-index: 3;
+    max-width: 500px;
+    color: #75666d;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+
+/* linha decorativa */
+
+.welcome p::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    margin: 0 auto 17px;
+    border-radius: 99px;
+    background: linear-gradient( 90deg, var(--rosa-500), var(--lilac-400));
+}
+
+
+/* =========================================================
+   11. LOGIN — PAINEL
+========================================================= */
+
+.login-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 65px 55px;
+    background: rgba(255, 255, 255, .70);
+    border-left: 1px solid rgba(92, 67, 78, .08);
+}
+
+
+/* decoração */
+
+.login-panel::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    right: -100px;
+    top: -80px;
+    border: 20px solid rgba(201, 160, 207, .11);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+/* decoração inferior */
+
+.login-panel::after {
+    content: "✦";
+    position: absolute;
+    right: 35px;
+    bottom: 28px;
+    color: rgba(180, 125, 160, .18);
+    font-size: 19px;
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%,
+    100% {
+        opacity: .45;
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-7px) rotate(12deg);
+    }
+}
+
+
+/* =========================================================
+   12. TÍTULO LOGIN
+========================================================= */
+
+.login-panel h2 {
+    position: relative;
+    z-index: 2;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 32px;
+}
+
+.login-panel h2::after {
+    content: "";
+    display: block;
+    width: 43px;
+    height: 3px;
+    margin-top: 11px;
+    border-radius: 999px;
+    background: linear-gradient( 90deg, var(--rosa-500), var(--lilac-400));
+}
+
+
+/* =========================================================
+   13. FORMULÁRIO
+========================================================= */
+
+#loginForm {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   14. LABELS
+========================================================= */
+
+#loginForm label {
+    color: #61545b;
+    font-size: 11px;
+    font-weight: 800;
+    margin: 0 0 8px 2px;
+}
+
+
+/* =========================================================
+   15. INPUTS
+========================================================= */
+
+#loginForm input {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    margin-bottom: 19px;
+    border: 1px solid rgba(91, 68, 78, .14);
+    border-radius: 14px;
+    outline: none;
+    background: rgba(255, 255, 255, .78);
+    color: var(--ink);
+    font-size: 13px;
+    box-shadow: 0 4px 13px rgba(83, 55, 68, .035);
+    transition: border-color .25s ease, background .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+#loginForm input::placeholder {
+    color: #b4a7ad;
+}
+
+#loginForm input:hover {
+    border-color: rgba(209, 110, 146, .25);
+}
+
+#loginForm input:focus {
+    border-color: var(--rosa-400);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(209, 110, 146, .10);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   16. BOTÃO LOGIN
+========================================================= */
+
+.main-button {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+    margin-top: 7px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient( 135deg, var(--rosa-500), var(--lilac-500));
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .11em;
+    box-shadow: 0 12px 25px rgba(179, 118, 145, .22);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+
+
+/* brilho passando */
+
+.main-button::before {
+    content: "";
+    position: absolute;
+    width: 85px;
+    height: 170px;
+    left: -110px;
+    top: -60px;
+    background: rgba(255, 255, 255, .18);
+    transform: rotate(25deg);
+    transition: .65s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 17px 33px rgba(179, 118, 145, .30);
+}
+
+.main-button:hover::before {
+    left: 120%;
+}
+
+
+/* =========================================================
+   17. CADASTRO LINK
+========================================================= */
+
+.register-text {
+    position: relative;
+    z-index: 3;
+    margin-top: 20px;
+    text-align: center;
+    color: #93868c;
+    font-size: 10px;
+}
+
+.register-text a {
+    position: relative;
+    color: var(--rosa-600);
+    font-weight: 800;
+    transition: color .2s ease;
+}
+
+.register-text a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .25s ease;
+}
+
+.register-text a:hover {
+    color: var(--lilac-600);
+}
+
+.register-text a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* =========================================================
+   18. CADASTRO — CARD
+========================================================= */
+
+.cadastro-card {
+    position: relative;
+    width: min(1120px, 100%);
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .70);
+    border-radius: 38px;
+    background: rgba(255, 250, 244, .78);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================================================
+   19. CADASTRO — ÁREA DA FLOR
+========================================================= */
+
+.cadastro-arte {
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient( 145deg, rgba(255, 239, 236, .88), rgba(247, 211, 218, .82));
+}
+
+
+/* círculos */
+
+.cadastro-arte::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -210px;
+    bottom: -210px;
+    border: 38px solid rgba(195, 137, 186, .11);
+    border-radius: 50%;
+}
+
+.cadastro-arte::after {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    left: -95px;
+    top: -80px;
+    border: 23px solid rgba(224, 134, 166, .10);
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   20. CANVAS DA FLOR
+========================================================= */
+
+#florCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   21. FRASE DO CADASTRO
+========================================================= */
+
+.frase {
+    position: absolute;
+    z-index: 4;
+    top: 42px;
+    left: 50%;
+    width: 82%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.frase h2 {
+    color: #8f5d57;
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(31px, 4vw, 42px);
+    font-weight: 400;
+    line-height: 1.05;
+    text-shadow: 0 4px 12px rgba(112, 72, 72, .07);
+}
+
+.frase p {
+    max-width: 430px;
+    margin: 10px auto 0;
+    color: #705454;
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   22. VOLTAR
+========================================================= */
+
+.back-link {
+    position: absolute;
+    z-index: 6;
+    top: 23px;
+    left: 28px;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(91, 68, 78, .12);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .55);
+    backdrop-filter: blur(8px);
+    color: #9b655d;
+    font-size: 25px;
+    line-height: 1;
+    transition: .25s var(--ease);
+}
+
+.back-link:hover {
+    color: var(--rosa-600);
+    background: white;
+    transform: translateX(-3px);
+    box-shadow: var(--shadow-xs);
+}
+
+
+/* =========================================================
+   23. CADASTRO — CONTEÚDO
+========================================================= */
+
+.cadastro-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 55px 55px;
+    background: rgba(255, 255, 255, .72);
+    border-left: 1px solid rgba(92, 67, 78, .08);
+}
+
+
+/* =========================================================
+   24. TÍTULO CADASTRO
+========================================================= */
+
+.cadastro-content h1 {
+    color: var(--ink);
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(55px, 5vw, 72px);
+    font-weight: 400;
+    line-height: .95;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   25. FORMULÁRIO DE CADASTRO
+========================================================= */
+
+.cadastro-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* funciona também para formulários da página
+   de cadastro */
+
+.cadastro-content label {
+    color: #61545b;
+    font-size: 11px;
+    font-weight: 800;
+    margin: 0 0 8px 2px;
+}
+
+.cadastro-content input {
+    width: 100%;
+    max-width: 100%;
+    height: 50px;
+    margin-bottom: 17px;
+    padding: 0 16px;
+    border: 1px solid rgba(91, 68, 78, .14);
+    border-radius: 14px;
+    outline: none;
+    background: rgba(255, 255, 255, .80);
+    color: var(--ink);
+    font-size: 13px;
+    transition: .25s ease;
+}
+
+.cadastro-content input:hover {
+    border-color: rgba(209, 110, 146, .25);
+}
+
+.cadastro-content input:focus {
+    border-color: var(--rosa-400);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(209, 110, 146, .10);
+}
+
+
+/* botão do cadastro,
+   caso use .main-button nele */
+
+.cadastro-content .main-button {
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   26. CADASTRO — MARCA
+========================================================= */
+
+.cadastro-brand {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: linear-gradient( 145deg, rgba(248, 198, 181, .70), rgba(245, 222, 236, .72));
+}
+
+.cadastro-brand .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: .95;
+    color: #9d685f;
+    transform: scale(1.16);
+    transition: .35s var(--ease);
+}
+
+.cadastro-brand .brand:hover {
+    transform: scale(1.20);
+}
+
+.brand-initials {
+    font-family: "Great Vibes", cursive;
+    font-size: 62px;
+}
+
+.brand span:last-child {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+}
+
+
+/* =========================================================
+   27. MODAL — CASO SEJA USADO NO CADASTRO
+========================================================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(54, 39, 47, .43);
+    backdrop-filter: blur(11px);
+}
+
+.overlay.show {
+    display: flex;
+    animation: overlayIn .22s ease both;
+}
+
+@keyframes overlayIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    position: relative;
+    width: min(620px, 100%);
+    overflow: hidden;
+    padding: 42px;
+    border: 1px solid rgba(255, 255, 255, .78);
+    border-radius: 29px;
+    background: linear-gradient( 145deg, #fffaf5, #fff0e4);
+    box-shadow: 0 35px 105px rgba(38, 25, 31, .30);
+    animation: modalIn .38s var(--ease) both;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: -150px;
+    top: -155px;
+    border: 23px solid rgba(201, 160, 207, .12);
+    border-radius: 50%;
+}
+
+.modal-line {
+    width: 55px;
+    height: 4px;
+    margin-bottom: 23px;
+    border-radius: 999px;
+    background: linear-gradient( 90deg, var(--rosa-400), var(--lilac-400));
+}
+
+.modal h2 {
+    position: relative;
+    z-index: 2;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.modal-subtitle {
+    display: inline-flex;
+    margin-top: 9px;
+    color: var(--lilac-600);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+.modal p {
+    margin-top: 21px;
+    color: var(--ink-soft);
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.modal-tip {
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    color: var(--gray-light);
+    font-size: 9px;
+}
+
+.close {
+    position: absolute;
+    z-index: 4;
+    top: 16px;
+    right: 16px;
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .90);
+    color: var(--ink-soft);
+    font-size: 20px;
+    transition: .25s var(--ease);
+}
+
+.close:hover {
+    transform: rotate(90deg);
+    background: var(--rosa-100);
+}
+
+
+/* =========================================================
+   28. ACESSIBILIDADE
+========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(150, 112, 164, .30);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   29. TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+    .login-card,
+    .cadastro-card {
+        grid-template-columns: 1fr;
+    }
+    .welcome {
+        min-height: 380px;
+        padding: 50px 35px;
+    }
+    .login-panel,
+    .cadastro-content {
+        padding: 45px 35px;
+    }
+    .cadastro-arte {
+        min-height: 430px;
+    }
+    .cadastro-brand {
+        min-height: 250px;
+    }
+    .welcome p {
+        max-width: 550px;
+    }
+}
+
+
+/* =========================================================
+   30. CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+    body {
+        overflow-y: auto;
+    }
+    .page {
+        min-height: 100vh;
+        padding: 14px;
+    }
+    .card,
+    .cadastro-card {
+        width: 100%;
+        border-radius: 25px;
+    }
+    .login-card {
+        min-height: auto;
+    }
+    .welcome {
+        padding: 36px 22px 34px;
+    }
+    .logo {
+        width: 95px;
+        margin-bottom: 22px;
+    }
+    .welcome h1 {
+        font-size: 48px;
+        margin-bottom: 16px;
+    }
+    .welcome p {
+        font-size: 11px;
+        line-height: 1.75;
+    }
+    .login-panel {
+        padding: 37px 22px 40px;
+        border-left: none;
+        border-top: 1px solid rgba(92, 67, 78, .08);
+    }
+    .login-panel h2 {
+        font-size: 38px;
+        margin-bottom: 27px;
+    }
+    .login-panel::after {
+        display: none;
+    }
+    #loginForm input,
+    .cadastro-content input {
+        height: 48px;
+    }
+    .main-button {
+        height: 48px;
+    }
+    .cadastro-arte {
+        min-height: 380px;
+    }
+    .frase {
+        top: 34px;
+        width: 87%;
+    }
+    .frase h2 {
+        font-size: 31px;
+    }
+    .frase p {
+        font-size: 10px;
+    }
+    .back-link {
+        width: 38px;
+        height: 38px;
+        top: 16px;
+        left: 17px;
+        font-size: 22px;
+    }
+    .cadastro-content {
+        padding: 38px 22px 42px;
+        border-left: none;
+        border-top: 1px solid rgba(92, 67, 78, .08);
+    }
+    .cadastro-content h1 {
+        font-size: 50px;
+        margin-bottom: 25px;
+    }
+    .cadastro-brand {
+        min-height: 190px;
+        padding: 25px;
+    }
+    .cadastro-brand .brand {
+        transform: scale(1);
+    }
+    .brand-initials {
+        font-size: 52px;
+    }
+    .brand span:last-child {
+        font-size: 25px;
+    }
+    .modal {
+        padding: 34px 24px;
+    }
+    .modal h2 {
+        font-size: 33px;
+    }
+}
+
+
+/* =========================================================
+   31. CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 400px) {
+    .welcome h1 {
+        font-size: 43px;
+    }
+    .welcome p {
+        font-size: 10px;
+    }
+    .login-panel h2 {
+        font-size: 35px;
+    }
+    .cadastro-content h1 {
+        font-size: 46px;
+    }
+    .cadastro-arte {
+        min-height: 340px;
+    }
+    .frase h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================================================
+   32. REDUÇÃO DE MOVIMENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

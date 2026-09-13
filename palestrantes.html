@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Palestrantes | Elas Empreendedoras</title>
+
+
+    <!-- =========================================================
+         FONTES
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* =========================================================
+           01. VARIÁVEIS
+        ========================================================== */
+        
+         :root {
+            --pink: #d87598;
+            --pink-dark: #bc5b7c;
+            --pink-soft: #f9dde6;
+            --lilac: #ae89ba;
+            --lilac-dark: #8f6d9a;
+            --lilac-soft: #ece1ef;
+            --cream: #fffaf3;
+            --cream-2: #f8ead4;
+            --cream-3: #f1dcc0;
+            --ink: #40373c;
+            --ink-2: #61565c;
+            --ink-3: #91838a;
+            --ink-4: #ada0a5;
+            --white: #ffffff;
+            --line: rgba(80, 60, 69, .11);
+            --shadow: 0 22px 60px rgba(73, 48, 59, .10);
+            --shadow-hover: 0 28px 75px rgba(73, 48, 59, .16);
+            --ease: cubic-bezier(.22, 1, .36, 1);
+        }
+        /* =========================================================
+           02. RESET
+        ========================================================== */
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: "Inter", Arial, sans-serif;
+            color: var(--ink);
+            background: radial-gradient( circle at 8% 5%, rgba(255, 255, 255, .62), transparent 22%), radial-gradient( circle at 92% 88%, rgba(255, 255, 255, .27), transparent 22%), linear-gradient( 135deg, #efa5c4 0%, #f2afca 30%, #f4beca 56%, #f7d0c2 79%, #f6ddd0 100%);
+        }
+        
+        button {
+            font: inherit;
+            border: 0;
+        }
+        
+         ::selection {
+            background: var(--pink-soft);
+            color: var(--ink);
+        }
+        /* =========================================================
+           03. DECORAÇÃO DO FUNDO
+        ========================================================== */
+        
+        body::before {
+            content: "";
+            position: fixed;
+            width: 680px;
+            height: 680px;
+            right: -325px;
+            top: -300px;
+            border: 56px solid rgba(221, 113, 158, .17);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            width: 540px;
+            height: 540px;
+            left: -340px;
+            bottom: -350px;
+            border: 45px solid rgba(255, 247, 207, .29);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        /* =========================================================
+           04. PÁGINA
+        ========================================================== */
+        
+        .page {
+            position: relative;
+            z-index: 1;
+            width: min( 1490px, calc(100% - 48px));
+            margin: 20px auto;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .65);
+            border-radius: 40px;
+            background: rgba(255, 250, 244, .94);
+            box-shadow: var(--shadow);
+            animation: pageIn .7s var(--ease) both;
+        }
+        
+        @keyframes pageIn {
+            from {
+                opacity: 0;
+                transform: translateY(22px) scale(.985);
+                filter: blur(3px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+        /* =========================================================
+           05. HEADER
+        ========================================================== */
+        
+        .header {
+            position: relative;
+            z-index: 10;
+            min-height: 88px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 26px;
+            background: rgba(255, 255, 255, .40);
+            border-bottom: 1px solid var(--line);
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+        
+        .brand-mark {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: linear-gradient( 135deg, var(--pink), var(--lilac));
+            color: white;
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 23px;
+            box-shadow: 0 7px 19px rgba(107, 69, 91, .17);
+        }
+        
+        .brand-copy strong {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+        }
+        
+        .brand-copy span {
+            display: block;
+            margin-top: 3px;
+            color: var(--ink-4);
+            font-size: 9px;
+        }
+        
+        .header-title {
+            text-align: center;
+        }
+        
+        .header-title small {
+            color: var(--lilac-dark);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .20em;
+            text-transform: uppercase;
+        }
+        
+        .header-title h1 {
+            margin-top: 4px;
+            color: var(--ink);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 40px;
+            padding: 0 15px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .88);
+            color: var(--ink-2);
+            font-size: 9px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform .25s var(--ease), box-shadow .25s ease;
+        }
+        
+        .back:hover {
+            transform: translateX(-3px);
+            box-shadow: 0 8px 20px rgba(70, 50, 60, .08);
+        }
+        /* =========================================================
+           06. HERO
+        ========================================================== */
+        
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(350px, .85fr);
+            min-height: 470px;
+            margin: 23px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            background: var(--cream);
+        }
+        
+        .hero-main {
+            position: relative;
+            overflow: hidden;
+            padding: 62px 55px;
+            background: linear-gradient( 145deg, #fffaf5, #f9eee5);
+        }
+        
+        .hero-main::before {
+            content: "VOZ";
+            position: absolute;
+            right: -28px;
+            bottom: -65px;
+            color: rgba(170, 137, 186, .075);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 190px;
+            line-height: .8;
+            pointer-events: none;
+        }
+        
+        .hero-main::after {
+            content: "✦";
+            position: absolute;
+            right: 12%;
+            top: 15%;
+            color: rgba(216, 117, 152, .22);
+            font-size: 17px;
+        }
+        
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--pink-dark);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+        
+        .eyebrow::before {
+            content: "";
+            width: 27px;
+            height: 1px;
+            background: currentColor;
+        }
+        
+        .hero-title {
+            max-width: 690px;
+            margin-top: 16px;
+            color: var(--ink);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: clamp( 50px, 6vw, 78px);
+            font-weight: 400;
+            line-height: .92;
+            letter-spacing: -.035em;
+        }
+        
+        .hero-title em {
+            color: var(--pink);
+            font-style: normal;
+        }
+        
+        .hero-description {
+            max-width: 610px;
+            margin-top: 23px;
+            color: var(--ink-2);
+            font-size: 12px;
+            line-height: 1.85;
+        }
+        
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+        }
+        
+        .hero-button {
+            min-height: 44px;
+            padding: 0 18px;
+            border-radius: 13px;
+            background: var(--lilac);
+            color: white;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 9px 23px rgba(174, 137, 187, .22);
+            transition: .25s var(--ease);
+        }
+        
+        .hero-button:hover {
+            transform: translateY(-3px);
+            background: var(--lilac-dark);
+            box-shadow: 0 14px 29px rgba(174, 137, 187, .28);
+        }
+        
+        .hero-secondary {
+            min-height: 44px;
+            padding: 0 18px;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            background: rgba(255, 255, 255, .85);
+            color: var(--ink-2);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: .25s var(--ease);
+        }
+        
+        .hero-secondary:hover {
+            transform: translateY(-3px);
+            background: white;
+            box-shadow: var(--shadow-xs);
+        }
+        /* =========================================================
+           07. ESTATÍSTICAS
+        ========================================================== */
+        
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 36px;
+        }
+        
+        .stat {
+            padding-left: 13px;
+            border-left: 1px solid var(--line-strong);
+        }
+        
+        .stat strong {
+            display: block;
+            color: var(--ink-800);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 23px;
+            font-weight: 400;
+        }
+        
+        .stat span {
+            display: block;
+            margin-top: 2px;
+            color: var(--ink-4);
+            font-size: 9px;
+        }
+        /* =========================================================
+           08. ÁREA VISUAL
+        ========================================================== */
+        
+        .hero-art {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient( 145deg, #e9d9ed, #efc3ce 49%, #f5d5c0);
+        }
+        
+        .hero-art::before {
+            content: "";
+            position: absolute;
+            width: 370px;
+            height: 370px;
+            right: -135px;
+            top: -155px;
+            border: 34px solid rgba(255, 255, 255, .16);
+            border-radius: 50%;
+        }
+        
+        .hero-art::after {
+            content: "";
+            position: absolute;
+            width: 245px;
+            height: 245px;
+            left: -130px;
+            bottom: -140px;
+            border: 28px solid rgba(255, 255, 255, .13);
+            border-radius: 50%;
+        }
+        
+        .art-label {
+            position: relative;
+            z-index: 3;
+            padding: 30px;
+            color: rgba(62, 53, 59, .62);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+        
+        .microphone {
+            position: absolute;
+            z-index: 4;
+            left: 50%;
+            top: 54%;
+            transform: translate(-50%, -50%);
+            width: 148px;
+            height: 148px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .68);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .25);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 18px 45px rgba(83, 57, 69, .08);
+        }
+        
+        .microphone-inner {
+            width: 88px;
+            height: 88px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .55);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .31);
+            color: rgba(69, 55, 63, .66);
+            font-size: 39px;
+        }
+        
+        .sound {
+            position: absolute;
+            z-index: 3;
+            color: rgba(75, 59, 67, .50);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 27px;
+        }
+        
+        .sound.one {
+            top: 30%;
+            left: 23%;
+            transform: rotate(-12deg);
+        }
+        
+        .sound.two {
+            top: 37%;
+            right: 19%;
+            transform: rotate(12deg);
+        }
+        
+        .sound.three {
+            bottom: 23%;
+            left: 18%;
+            transform: rotate(-8deg);
+        }
+        
+        .sound.four {
+            bottom: 19%;
+            right: 21%;
+            transform: rotate(10deg);
+        }
+        
+        .art-caption {
+            position: absolute;
+            z-index: 5;
+            left: 31px;
+            right: 31px;
+            bottom: 27px;
+            padding-top: 13px;
+            border-top: 1px solid rgba(255, 255, 255, .40);
+            color: rgba(68, 56, 62, .58);
+            font-size: 8px;
+            line-height: 1.6;
+        }
+        /* =========================================================
+           09. SEÇÃO
+        ========================================================== */
+        
+        .speakers {
+            padding: 24px 44px 45px;
+            background: linear-gradient( 180deg, rgba(250, 225, 184, .48), rgba(250, 225, 184, .22));
+        }
+        
+        .section-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 22px;
+        }
+        
+        .section-kicker {
+            color: var(--lilac-dark);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+        
+        .section-heading h2 {
+            margin-top: 5px;
+            color: var(--ink);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .section-heading p {
+            max-width: 390px;
+            color: var(--ink-4);
+            font-size: 10px;
+            line-height: 1.7;
+            text-align: right;
+        }
+        /* =========================================================
+           10. FILTROS
+        ========================================================== */
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+        
+        .filter {
+            min-height: 29px;
+            padding: 0 11px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .53);
+            color: var(--ink-2);
+            font-size: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .22s var(--ease);
+        }
+        
+        .filter:hover {
+            transform: translateY(-2px);
+            background: white;
+        }
+        
+        .filter.active {
+            border-color: var(--pink);
+            background: var(--pink);
+            color: white;
+        }
+        /* =========================================================
+           11. GRID
+        ========================================================== */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat( 4, minmax(0, 1fr));
+            gap: 16px;
+        }
+        /* =========================================================
+           12. CARD
+        ========================================================== */
+        
+        .card {
+            position: relative;
+            min-height: 345px;
+            padding: 11px;
+            overflow: hidden;
+            border: 1px solid rgba(100, 75, 85, .11);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, .75);
+            cursor: pointer;
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s ease;
+            animation: cardIn .6s var(--ease) both;
+        }
+        
+        .card:nth-child(1) {
+            animation-delay: .02s;
+        }
+        
+        .card:nth-child(2) {
+            animation-delay: .07s;
+        }
+        
+        .card:nth-child(3) {
+            animation-delay: .12s;
+        }
+        
+        .card:nth-child(4) {
+            animation-delay: .17s;
+        }
+        
+        @keyframes cardIn {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card:hover {
+            transform: translateY(-7px);
+            background: white;
+            box-shadow: var(--shadow-hover);
+        }
+        /* =========================================================
+           13. FOTO / RETRATO
+        ========================================================== */
+        
+        .portrait {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 17px;
+        }
+        
+        .portrait::before {
+            content: "";
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            right: -135px;
+            top: -145px;
+            border: 29px solid rgba(255, 255, 255, .17);
+            border-radius: 50%;
+        }
+        
+        .portrait::after {
+            content: "";
+            position: absolute;
+            width: 115px;
+            height: 115px;
+            left: -55px;
+            bottom: -65px;
+            border: 17px solid rgba(255, 255, 255, .13);
+            border-radius: 50%;
+        }
+        
+        .card:nth-child(1) .portrait {
+            background: linear-gradient( 135deg, #ad607f, #e5a0b8);
+        }
+        
+        .card:nth-child(2) .portrait {
+            background: linear-gradient( 135deg, #81638e, #c9a4d1);
+        }
+        
+        .card:nth-child(3) .portrait {
+            background: linear-gradient( 135deg, #c07377, #eab1a4);
+        }
+        
+        .card:nth-child(4) .portrait {
+            background: linear-gradient( 135deg, #956c56, #dfbc91);
+        }
+        
+        .initial {
+            position: relative;
+            z-index: 4;
+            width: 92px;
+            height: 92px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .70);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .20);
+            color: white;
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 47px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 14px 32px rgba(60, 39, 48, .14);
+            transition: transform .35s var(--ease), background .35s ease;
+        }
+        
+        .card:hover .initial {
+            transform: scale(1.07) rotate(-4deg);
+            background: rgba(255, 255, 255, .28);
+        }
+        
+        .speaker-number {
+            position: absolute;
+            z-index: 5;
+            right: 13px;
+            top: 13px;
+            color: rgba(255, 255, 255, .62);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 17px;
+        }
+        
+        .speaker-area {
+            position: absolute;
+            z-index: 5;
+            left: 13px;
+            top: 13px;
+            padding: 6px 9px;
+            border: 1px solid rgba(255, 255, 255, .45);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .21);
+            color: white;
+            font-size: 7px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            backdrop-filter: blur(5px);
+        }
+        /* =========================================================
+           14. INFO CARD
+        ========================================================== */
+        
+        .card-info {
+            padding: 15px 6px 5px;
+        }
+        
+        .card-info h3 {
+            color: var(--ink);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .card-info p {
+            margin-top: 7px;
+            color: var(--ink-3);
+            font-size: 10px;
+            line-height: 1.45;
+        }
+        
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 12px;
+        }
+        
+        .area {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            padding: 0 9px;
+            border: 1px solid rgba(216, 117, 152, .14);
+            border-radius: 999px;
+            background: var(--pink-100);
+            color: #986274;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+        
+        .learn {
+            color: var(--lilac-dark);
+            font-size: 8px;
+            font-weight: 800;
+        }
+        /* =========================================================
+           15. FRASE FINAL
+        ========================================================== */
+        
+        .final {
+            position: relative;
+            margin: 0 44px 44px;
+            padding: 31px 35px;
+            overflow: hidden;
+            border: 1px solid rgba(99, 75, 87, .09);
+            border-radius: 22px;
+            background: linear-gradient( 135deg, #ece0f0, #f4dfe4);
+        }
+        
+        .final::before {
+            content: "“";
+            position: absolute;
+            right: 35px;
+            top: -21px;
+            color: rgba(145, 105, 158, .13);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 130px;
+            line-height: 1;
+        }
+        
+        .final small {
+            color: var(--lilac-dark);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .17em;
+            text-transform: uppercase;
+        }
+        
+        .final h4 {
+            max-width: 620px;
+            margin-top: 7px;
+            color: var(--ink);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 1.03;
+        }
+        
+        .final p {
+            max-width: 630px;
+            margin-top: 8px;
+            color: var(--ink-2);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+        /* =========================================================
+           16. MODAL
+        ========================================================== */
+        
+        .overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(54, 40, 48, .53);
+            backdrop-filter: blur(11px);
+        }
+        
+        .overlay.show {
+            display: flex;
+            animation: fade .2s ease both;
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .modal {
+            position: relative;
+            width: min(640px, 100%);
+            padding: 42px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .78);
+            border-radius: 29px;
+            background: linear-gradient( 145deg, #fffaf5, #fff0e4);
+            box-shadow: 0 35px 105px rgba(38, 25, 31, .30);
+            animation: modalIn .4s var(--ease) both;
+        }
+        
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(22px) scale(.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .modal::before {
+            content: "";
+            position: absolute;
+            width: 275px;
+            height: 275px;
+            right: -145px;
+            top: -150px;
+            border: 23px solid rgba(174, 137, 187, .12);
+            border-radius: 50%;
+        }
+        
+        .modal-line {
+            width: 54px;
+            height: 4px;
+            margin-bottom: 24px;
+            border-radius: 999px;
+            background: linear-gradient( 90deg, var(--pink), var(--lilac));
+        }
+        
+        .modal h2 {
+            position: relative;
+            z-index: 2;
+            color: var(--ink);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .modal small {
+            display: block;
+            margin-top: 8px;
+            color: var(--lilac-dark);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .11em;
+            text-transform: uppercase;
+        }
+        
+        .modal p {
+            margin-top: 21px;
+            color: var(--ink-2);
+            font-size: 12px;
+            line-height: 1.85;
+        }
+        
+        .modal-tip {
+            margin-top: 22px;
+            padding-top: 15px;
+            border-top: 1px solid var(--line);
+            color: var(--ink-4);
+            font-size: 9px;
+        }
+        
+        .close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .90);
+            color: var(--ink-2);
+            font-size: 20px;
+            cursor: pointer;
+            transition: .25s var(--ease);
+        }
+        
+        .close:hover {
+            transform: rotate(90deg);
+            background: var(--pink-soft);
+        }
+        /* =========================================================
+           17. RESPONSIVIDADE
+        ========================================================== */
+        
+        @media (max-width: 1050px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            .hero-art {
+                min-height: 360px;
+            }
+            .grid {
+                grid-template-columns: repeat( 2, minmax(0, 1fr));
+            }
+        }
+        
+        @media (max-width: 720px) {
+            .page {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+            .header {
+                grid-template-columns: auto 1fr auto;
+                min-height: 76px;
+                padding: 13px 15px;
+            }
+            .brand-copy {
+                display: none;
+            }
+            .brand-mark {
+                width: 42px;
+                height: 42px;
+                font-size: 21px;
+            }
+            .header-title {
+                position: static;
+                transform: none;
+                text-align: left;
+                margin-left: 6px;
+            }
+            .header-title small {
+                display: none;
+            }
+            .header-title h1 {
+                font-size: 19px;
+            }
+            .back {
+                padding: 0 11px;
+            }
+            .back span {
+                display: none;
+            }
+            .hero {
+                margin: 12px;
+                border-radius: 23px;
+            }
+            .hero-main {
+                padding: 45px 24px;
+            }
+            .hero-title {
+                font-size: 48px;
+            }
+            .hero-description {
+                font-size: 11px;
+            }
+            .hero-art {
+                min-height: 310px;
+            }
+            .speakers {
+                padding: 24px 18px 32px;
+            }
+            .section-heading {
+                display: block;
+            }
+            .section-heading h2 {
+                font-size: 31px;
+            }
+            .section-heading p {
+                margin-top: 10px;
+                text-align: left;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                min-height: 345px;
+            }
+            .final {
+                margin: 0 18px 25px;
+                padding: 26px 23px;
+            }
+            .final h4 {
+                font-size: 26px;
+            }
+            .modal {
+                padding: 35px 24px;
+            }
+            .modal h2 {
+                font-size: 33px;
+            }
+        }
+        
+        @media (max-width: 430px) {
+            .header-title h1 {
+                font-size: 17px;
+            }
+            .hero-title {
+                font-size: 42px;
+            }
+            .microphone {
+                width: 125px;
+                height: 125px;
+            }
+            .microphone-inner {
+                width: 75px;
+                height: 75px;
+                font-size: 32px;
+            }
+        }
+        /* =========================================================
+           18. ACESSIBILIDADE
+        ========================================================== */
+        
+        .card:focus-visible,
+        button:focus-visible {
+            outline: 3px solid rgba(150, 112, 164, .34);
+            outline-offset: 3px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="page">
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="header">
+
+
+            <div class="brand">
+
+                <div class="brand-mark">
+                    E
+                </div>
+
+
+                <div class="brand-copy">
+
+                    <strong>
+                        Elas Empreendedoras
+                    </strong>
+
+                    <span>
+                        Conhecimento que inspira
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-title">
+
+                <small>
+                    Vozes que inspiram
+                </small>
+
+                <h1>
+                    Palestrantes
+                </h1>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button class="back" onclick="window.location.href='Home.html'">
+
+                    ←
+
+                    <span>
+                        Voltar
+                    </span>
+
+                </button>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+
+            <div class="hero-main">
+
+
+                <div class="eyebrow">
+                    Conhecimento em movimento
+                </div>
+
+
+                <h2 class="hero-title">
+
+                    Vozes que
+                    <em>
+                        inspiram
+                    </em> novas possibilidades.
+
+                </h2>
+
+
+                <p class="hero-description">
+
+                    Palestras, histórias e experiências podem ajudar outras mulheres a enxergar novos caminhos, desenvolver ideias e transformar conhecimento em ação.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+
+                    <button class="hero-button" onclick="document.getElementById('palestrantes').scrollIntoView({behavior:'smooth'})">
+
+                        Conhecer palestrantes
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <button class="hero-secondary" onclick="window.location.href='Home.html'">
+
+                        Explorar plataforma
+
+                    </button>
+
+
+                </div>
+
+
+
+                <div class="stats">
+
+
+                    <div class="stat">
+
+                        <strong>
+                            04
+                        </strong>
+
+                        <span>
+                            palestrantes
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            04
+                        </strong>
+
+                        <span>
+                            áreas de atuação
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            01
+                        </strong>
+
+                        <span>
+                            propósito
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 VISUAL
+            ================================================== -->
+
+            <aside class="hero-art">
+
+
+                <div class="art-label">
+                    Conhecimento compartilhado
+                </div>
+
+
+                <div class="microphone">
+
+                    <div class="microphone-inner">
+                        ♫
+                    </div>
+
+                </div>
+
+
+                <div class="sound one">
+                    •
+                </div>
+
+
+                <div class="sound two">
+                    •
+                </div>
+
+
+                <div class="sound three">
+                    •
+                </div>
+
+
+                <div class="sound four">
+                    •
+                </div>
+
+
+                <div class="art-caption">
+
+                    Ideias crescem quando são compartilhadas, discutidas e transformadas em novas possibilidades.
+
+                </div>
+
+
+            </aside>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PALESTRANTES
+        ====================================================== -->
+
+        <section class="speakers" id="palestrantes">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <div class="section-kicker">
+                        Conheça as referências
+                    </div>
+
+                    <h2>
+                        Mulheres que compartilham caminhos.
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Diferentes experiências e áreas de atuação reunidas para inspirar novas ideias, decisões e possibilidades.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FILTROS
+            ================================================== -->
+
+            <div class="filters">
+
+
+                <button class="filter active" onclick="filtrar('Todos', this)">
+                    Todas
+                </button>
+
+
+                <button class="filter" onclick="filtrar('Liderança', this)">
+                    Liderança
+                </button>
+
+
+                <button class="filter" onclick="filtrar('Negócios', this)">
+                    Negócios
+                </button>
+
+
+                <button class="filter" onclick="filtrar('Inovação', this)">
+                    Inovação
+                </button>
+
+
+                <button class="filter" onclick="filtrar('Empreendedorismo', this)">
+                    Empreendedorismo
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GRID
+            ================================================== -->
+
+            <div class="grid">
+
+
+
+                <!-- =================================================
+                     ANA FONTES
+                ================================================== -->
+
+                <article class="card" data-category="Liderança" data-title="Ana Fontes" data-subtitle="Empreendedorismo feminino" data-description="Ana Fontes é empreendedora social e fundadora da Rede Mulher Empreendedora. Sua atuação envolve desenvolvimento, capacitação e fortalecimento de mulheres empreendedoras."
+                    onclick="abrir(this)" tabindex="0" role="button" aria-label="Conhecer Ana Fontes">
+
+
+                    <div class="portrait">
+
+
+                        <span class="speaker-area">
+                            Liderança
+                        </span>
+
+
+                        <span class="speaker-number">
+                            01
+                        </span>
+
+
+                        <div class="initial">
+                            A
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Ana Fontes
+                        </h3>
+
+
+                        <p>
+                            Empreendedorismo feminino
+                        </p>
+
+
+                        <div class="card-footer">
+
+                            <span class="area">
+                                Liderança
+                            </span>
+
+
+                            <span class="learn">
+                                Conhecer →
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CAMILA FARANI
+                ================================================== -->
+
+                <article class="card" data-category="Negócios" data-title="Camila Farani" data-subtitle="Investimentos e negócios" data-description="Camila Farani atua como empreendedora, investidora e mentora, participando de discussões sobre inovação, investimentos e desenvolvimento de negócios."
+                    onclick="abrir(this)" tabindex="0" role="button" aria-label="Conhecer Camila Farani">
+
+
+                    <div class="portrait">
+
+
+                        <span class="speaker-area">
+                            Negócios
+                        </span>
+
+
+                        <span class="speaker-number">
+                            02
+                        </span>
+
+
+                        <div class="initial">
+                            C
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Camila Farani
+                        </h3>
+
+
+                        <p>
+                            Investimentos e negócios
+                        </p>
+
+
+                        <div class="card-footer">
+
+                            <span class="area">
+                                Negócios
+                            </span>
+
+
+                            <span class="learn">
+                                Conhecer →
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     LUIZA HELENA
+                ================================================== -->
+
+                <article class="card" data-category="Liderança" data-title="Luiza Helena Trajano" data-subtitle="Liderança empresarial" data-description="Luiza Helena Trajano é uma empresária brasileira reconhecida por sua trajetória no Magazine Luiza e por sua participação em debates sobre liderança, empreendedorismo e desenvolvimento."
+                    onclick="abrir(this)" tabindex="0" role="button" aria-label="Conhecer Luiza Helena Trajano">
+
+
+                    <div class="portrait">
+
+
+                        <span class="speaker-area">
+                            Liderança
+                        </span>
+
+
+                        <span class="speaker-number">
+                            03
+                        </span>
+
+
+                        <div class="initial">
+                            L
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Luiza Helena Trajano
+                        </h3>
+
+
+                        <p>
+                            Liderança empresarial
+                        </p>
+
+
+                        <div class="card-footer">
+
+                            <span class="area">
+                                Liderança
+                            </span>
+
+
+                            <span class="learn">
+                                Conhecer →
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MONIQUE EVELLE
+                ================================================== -->
+
+                <article class="card" data-category="Inovação" data-title="Monique Evelle" data-subtitle="Inovação e impacto" data-description="Monique Evelle é empreendedora, comunicadora e atua com inovação, negócios e impacto social, compartilhando experiências sobre criatividade e transformação."
+                    onclick="abrir(this)" tabindex="0" role="button" aria-label="Conhecer Monique Evelle">
+
+
+                    <div class="portrait">
+
+
+                        <span class="speaker-area">
+                            Inovação
+                        </span>
+
+
+                        <span class="speaker-number">
+                            04
+                        </span>
+
+
+                        <div class="initial">
+                            M
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Monique Evelle
+                        </h3>
+
+
+                        <p>
+                            Inovação e impacto
+                        </p>
+
+
+                        <div class="card-footer">
+
+                            <span class="area">
+                                Inovação
+                            </span>
+
+
+                            <span class="learn">
+                                Conhecer →
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL
+        ====================================================== -->
+
+        <section class="final">
+
+
+            <small>
+                Uma ideia compartilhada pode ir mais longe
+            </small>
+
+
+            <h4>
+                Conhecimento não termina em quem fala. Ele continua em quem escuta.
+            </h4>
+
+
+            <p>
+
+                Cada experiência pode despertar uma pergunta, uma decisão ou até mesmo uma nova ideia.
+
+            </p>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         MODAL
+    ========================================================== -->
+
+    <div class="overlay" id="overlay">
+
+
+        <div class="modal">
+
+
+            <button class="close" onclick="fechar()" aria-label="Fechar janela">
+                ×
+            </button>
+
+
+            <div class="modal-line"></div>
+
+
+            <h2 id="modalTitle"></h2>
+
+
+            <small id="modalSubtitle"></small>
+
+
+            <p id="modalDescription"></p>
+
+
+            <div class="modal-tip">
+
+                Clique fora da janela ou pressione ESC para fechar.
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+        /* =========================================================
+                                   MODAL
+                                ========================================================== */
+
+        function abrir(card) {
+
+            document
+                .getElementById("modalTitle")
+                .textContent =
+                card.dataset.title;
+
+
+            document
+                .getElementById("modalSubtitle")
+                .textContent =
+                card.dataset.subtitle;
+
+
+            document
+                .getElementById("modalDescription")
+                .textContent =
+                card.dataset.description;
+
+
+            document
+                .getElementById("overlay")
+                .classList.add("show");
+
+        }
+
+
+        function fechar() {
+
+            document
+                .getElementById("overlay")
+                .classList.remove("show");
+
+        }
+
+
+
+        /* =========================================================
+           CLIQUE FORA
+        ========================================================== */
+
+        document
+            .getElementById("overlay")
+            .addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target === this
+                    ) {
+
+                        fechar();
+
+                    }
+
+                }
+            );
+
+
+
+        /* =========================================================
+           ESC
+        ========================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    fechar();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================================
+           ENTER / ESPAÇO
+        ========================================================== */
+
+        document
+            .querySelectorAll(".card")
+            .forEach(function(card) {
+
+                card.addEventListener(
+                    "keydown",
+                    function(event) {
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            abrir(card);
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+
+        /* =========================================================
+           FILTRO
+        ========================================================== */
+
+        function filtrar(
+            categoria,
+            botao
+        ) {
+
+
+            document
+                .querySelectorAll(".filter")
+                .forEach(function(item) {
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+            botao.classList.add(
+                "active"
+            );
+
+
+            document
+                .querySelectorAll(".card")
+                .forEach(function(card) {
+
+
+                    const mostrar =
+                        categoria === "Todos" ||
+                        card.dataset.category === categoria;
+
+
+                    card.style.display =
+                        mostrar ?
+                        "" :
+                        "none";
+
+                });
+
+        }
+    </script>
+
+
+</body>
+
+</html>

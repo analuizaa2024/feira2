@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elas em rede | Cadastro</title>
+    <link rel="stylesheet" href="logincadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="page">
+        <section class="card cadastro-card">
+            <a class="back-link" href="login.html" aria-label="Voltar para o login">←</a>
+            <div class="cadastro-content">
+                <h1>Cadastro</h1>
+
+                <form id="cadastroForm">
+
+                    <label for="nome">Digite seu nome:</label>
+                    <input type="text" id="nome" required>
+
+                    <label for="telefone">Digite seu telefone:</label>
+                    <input type="tel" id="telefone" required>
+
+                    <label for="email-cadastro">Digite seu E-mail:</label>
+                    <input type="email" id="email-cadastro" required>
+
+                    <label for="senha-cadastro">Digite sua senha:</label>
+                    <input type="password" id="senha-cadastro" required>
+
+                    <button class="main-button" type="submit">
+            CADASTRAR
+          </button>
+
+                </form>
+
+                <script>
+                    document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+
+                        event.preventDefault();
+
+                        const usuario = {
+
+                            nome: document.getElementById("nome").value.trim(),
+
+                            telefone: document.getElementById("telefone").value.trim(),
+
+                            email: document.getElementById("email-cadastro").value.trim(),
+
+                            senha: document.getElementById("senha-cadastro").value
+
+                        };
+
+                        localStorage.setItem("usuario", JSON.stringify(usuario));
+
+                        alert("Cadastro realizado com sucesso!");
+
+                        window.location.href = "index_novo.html";
+
+                    });
+                </script>
+
+
+            </div>
+            <div class="cadastro-arte">
+
+                <canvas id="florCanvas"></canvas>
+
+                <div class="frase">
+
+                    <h2>
+                        Pequenos passos
+                        <br> fazem grandes histórias.
+                    </h2>
+
+                    <p>
+                        Você está criando algo novo.
+                    </p>
+
+                </div>
+
+            </div>
+
+            </div>
+
+        </section>
+    </main>
+    <div class="cadastro-arte">
+
+        <canvas id="florCanvas"></canvas>
+
+        <div class="frase">
+
+            <h2>
+                Pequenos passos
+                <br> fazem grandes histórias.
+            </h2>
+
+            <p>
+                Você está criando algo novo.
+            </p>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>
+        document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const telefone = document.getElementById("telefone").value;
+            const email = document.getElementById("email-cadastro").value;
+            const senha = document.getElementById("senha-cadastro").value;
+
+            const usuario = {
+                nome: nome,
+                telefone: telefone,
+                email: email,
+                senha: senha
+            };
+
+            localStorage.setItem("usuario", JSON.stringify(usuario));
+
+            alert("Cadastro realizado com sucesso!");
+
+            window.location.href = "index_novo.html";
+        });
+    </script>
+
+    <script src="flor.js"></script>
+
+
+
+</body>
+
+</html>

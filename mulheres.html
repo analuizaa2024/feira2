@@ -1,0 +1,2149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mulheres Empreendedoras | Elas Empreendedoras</title>
+
+    <!-- =========================================================
+         FONTES
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* =========================================================
+           01. VARIÁVEIS
+        ========================================================== */
+        
+         :root {
+            --pink-50: #fff7f9;
+            --pink-100: #fcecef;
+            --pink-200: #f7d6df;
+            --pink-300: #efb4c5;
+            --pink-400: #e38aaa;
+            --pink-500: #d16e92;
+            --pink-600: #b95b7d;
+            --lilac-50: #faf7fc;
+            --lilac-100: #f2eaf5;
+            --lilac-200: #e5d6e9;
+            --lilac-300: #c9a4d1;
+            --lilac-400: #b38bc0;
+            --lilac-500: #9670a4;
+            --lilac-600: #7f5c8c;
+            --cream-50: #fffdf9;
+            --cream-100: #fff8ef;
+            --cream-200: #fae9d2;
+            --cream-300: #f1d7b7;
+            --ink-900: #3d3439;
+            --ink-800: #50454b;
+            --ink-700: #63565c;
+            --ink-600: #75666d;
+            --ink-500: #8e8086;
+            --ink-400: #ab9ca2;
+            --white: #ffffff;
+            --line: rgba(90, 67, 77, .12);
+            --line-strong: rgba(90, 67, 77, .20);
+            --shadow-xs: 0 5px 16px rgba(76, 50, 62, .05);
+            --shadow-sm: 0 12px 30px rgba(76, 50, 62, .08);
+            --shadow-md: 0 20px 48px rgba(76, 50, 62, .11);
+            --shadow-lg: 0 30px 85px rgba(55, 35, 45, .18);
+            --ease: cubic-bezier(.22, 1, .36, 1);
+        }
+        /* =========================================================
+           02. RESET
+        ========================================================== */
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            min-height: 100%;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+            color: var(--ink-800);
+            background: radial-gradient( circle at 8% 5%, rgba(255, 255, 255, .62), transparent 22%), radial-gradient( circle at 92% 86%, rgba(255, 255, 255, .25), transparent 23%), linear-gradient( 135deg, #efa4c4 0%, #f1adca 28%, #f5bdca 55%, #f7d0c2 78%, #f5dccb 100%);
+        }
+        
+        button {
+            font: inherit;
+            border: 0;
+        }
+        
+         ::selection {
+            background: var(--pink-200);
+            color: var(--ink-900);
+        }
+        /* =========================================================
+           03. FUNDO DECORATIVO
+        ========================================================== */
+        
+        body::before {
+            content: "";
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            right: -310px;
+            top: -320px;
+            border: 60px solid rgba(220, 109, 157, .17);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            width: 520px;
+            height: 520px;
+            left: -330px;
+            bottom: -330px;
+            border: 46px solid rgba(255, 247, 207, .28);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        /* =========================================================
+           04. PÁGINA
+        ========================================================== */
+        
+        .page {
+            position: relative;
+            z-index: 1;
+            width: min( 1510px, calc(100% - 46px));
+            min-height: calc(100vh - 40px);
+            margin: 20px auto;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .64);
+            border-radius: 40px;
+            background: rgba(255, 250, 244, .93);
+            box-shadow: var(--shadow-md);
+            animation: pageIn .75s var(--ease) both;
+        }
+        
+        @keyframes pageIn {
+            from {
+                opacity: 0;
+                transform: translateY(22px) scale(.985);
+                filter: blur(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+        /* =========================================================
+           05. HEADER
+        ========================================================== */
+        
+        .header {
+            position: relative;
+            z-index: 10;
+            min-height: 92px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 26px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, .44);
+        }
+        
+        .brand-area {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+        
+        .brand-mark {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: linear-gradient( 135deg, var(--pink-500), var(--lilac-500));
+            color: white;
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 24px;
+            box-shadow: 0 8px 22px rgba(112, 70, 95, .17);
+        }
+        
+        .brand-copy strong {
+            display: block;
+            color: var(--ink-800);
+            font-size: 11px;
+            font-weight: 800;
+        }
+        
+        .brand-copy span {
+            display: block;
+            margin-top: 3px;
+            color: var(--ink-400);
+            font-size: 9px;
+        }
+        
+        .header-title {
+            text-align: center;
+        }
+        
+        .header-title small {
+            display: block;
+            color: var(--lilac-500);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .20em;
+            text-transform: uppercase;
+        }
+        
+        .header-title h1 {
+            margin-top: 4px;
+            color: var(--ink-900);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 31px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .header-action {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 40px;
+            padding: 0 15px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .87);
+            color: var(--ink-700);
+            font-size: 9px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform .25s var(--ease), box-shadow .25s ease, background .25s ease;
+        }
+        
+        .back:hover {
+            transform: translateX(-3px);
+            background: white;
+            box-shadow: var(--shadow-xs);
+        }
+        /* =========================================================
+           06. HERO PRINCIPAL
+        ========================================================== */
+        
+        .hero {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1.14fr) minmax(330px, .86fr);
+            min-height: 455px;
+            margin: 22px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            background: var(--cream-50);
+        }
+        
+        .hero-text {
+            position: relative;
+            overflow: hidden;
+            padding: 60px 56px;
+            background: linear-gradient( 145deg, #fffaf4 0%, #fff5ec 100%);
+        }
+        
+        .hero-text::before {
+            content: "ELAS";
+            position: absolute;
+            right: -34px;
+            bottom: -45px;
+            color: rgba(216, 117, 152, .055);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 180px;
+            line-height: .8;
+            pointer-events: none;
+        }
+        
+        .hero-text::after {
+            content: "";
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            right: 16%;
+            top: -115px;
+            border: 22px solid rgba(201, 160, 207, .10);
+            border-radius: 50%;
+        }
+        
+        .eyebrow {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--lilac-500);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+        
+        .eyebrow::before {
+            content: "";
+            width: 25px;
+            height: 1px;
+            background: currentColor;
+        }
+        
+        .hero-title {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin-top: 16px;
+            color: var(--ink-900);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: clamp( 49px, 6vw, 78px);
+            font-weight: 400;
+            line-height: .91;
+            letter-spacing: -.035em;
+        }
+        
+        .hero-title em {
+            color: var(--pink-500);
+            font-style: normal;
+        }
+        
+        .hero-description {
+            position: relative;
+            z-index: 2;
+            max-width: 620px;
+            margin-top: 23px;
+            color: var(--ink-600);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+        
+        .hero-actions {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+        }
+        
+        .primary-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 44px;
+            padding: 0 17px;
+            border-radius: 13px;
+            background: var(--lilac-400);
+            color: white;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 9px 22px rgba(179, 139, 192, .22);
+            transition: .25s var(--ease);
+        }
+        
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            background: var(--lilac-500);
+            box-shadow: 0 13px 28px rgba(179, 139, 192, .27);
+        }
+        
+        .secondary-btn {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 0 17px;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            background: rgba(255, 255, 255, .86);
+            color: var(--ink-700);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: .25s var(--ease);
+        }
+        
+        .secondary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xs);
+            background: white;
+        }
+        /* =========================================================
+           07. ESTATÍSTICAS
+        ========================================================== */
+        
+        .hero-stats {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 34px;
+        }
+        
+        .stat {
+            padding-left: 13px;
+            border-left: 1px solid var(--line-strong);
+        }
+        
+        .stat strong {
+            display: block;
+            color: var(--ink-800);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 22px;
+            font-weight: 400;
+        }
+        
+        .stat span {
+            display: block;
+            margin-top: 2px;
+            color: var(--ink-400);
+            font-size: 9px;
+        }
+        /* =========================================================
+           08. ÁREA VISUAL DO HERO
+        ========================================================== */
+        
+        .hero-visual {
+            position: relative;
+            overflow: hidden;
+            padding: 31px;
+            background: linear-gradient( 145deg, #ecddef 0%, #f0c5ce 48%, #f5d5be 100%);
+        }
+        
+        .hero-visual::before {
+            content: "";
+            position: absolute;
+            width: 390px;
+            height: 390px;
+            right: -160px;
+            top: -170px;
+            border: 38px solid rgba(255, 255, 255, .18);
+            border-radius: 50%;
+        }
+        
+        .hero-visual::after {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            left: -120px;
+            bottom: -130px;
+            border: 27px solid rgba(255, 255, 255, .14);
+            border-radius: 50%;
+        }
+        
+        .visual-heading {
+            position: relative;
+            z-index: 3;
+            color: rgba(64, 54, 60, .63);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+        
+        .visual-orbit {
+            position: absolute;
+            width: 275px;
+            height: 275px;
+            left: 50%;
+            top: 54%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(255, 255, 255, .62);
+            border-radius: 50%;
+        }
+        
+        .visual-orbit::before {
+            content: "";
+            position: absolute;
+            inset: 31px;
+            border: 1px dashed rgba(255, 255, 255, .48);
+            border-radius: 50%;
+        }
+        
+        .visual-center {
+            position: absolute;
+            left: 50%;
+            top: 54%;
+            transform: translate(-50%, -50%);
+            width: 155px;
+            height: 155px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .66);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .29);
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+        
+        .visual-center strong {
+            display: block;
+            color: rgba(64, 54, 60, .72);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 64px;
+            font-weight: 400;
+            line-height: .8;
+        }
+        
+        .visual-center span {
+            display: block;
+            margin-top: 10px;
+            color: rgba(64, 54, 60, .55);
+            font-size: 7px;
+            font-weight: 800;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+        /* =========================================================
+           09. MINI PALAVRAS AO REDOR
+        ========================================================== */
+        
+        .orbit-word {
+            position: absolute;
+            z-index: 5;
+            padding: 7px 10px;
+            border: 1px solid rgba(255, 255, 255, .55);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .34);
+            color: rgba(66, 55, 61, .65);
+            font-size: 7px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+        }
+        
+        .word-1 {
+            top: 27%;
+            left: 10%;
+        }
+        
+        .word-2 {
+            top: 39%;
+            right: 10%;
+        }
+        
+        .word-3 {
+            bottom: 27%;
+            left: 13%;
+        }
+        
+        .word-4 {
+            bottom: 18%;
+            right: 13%;
+        }
+        /* =========================================================
+           10. SEÇÃO DE PERFIS
+        ========================================================== */
+        
+        .profiles {
+            padding: 17px 43px 48px;
+            background: linear-gradient( 180deg, rgba(250, 225, 184, .48), rgba(250, 225, 184, .20));
+        }
+        
+        .profiles-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 25px;
+            margin-bottom: 23px;
+        }
+        
+        .section-kicker {
+            color: var(--lilac-500);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+        
+        .profiles-heading h2 {
+            margin-top: 5px;
+            color: var(--ink-900);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .profiles-heading p {
+            max-width: 430px;
+            color: var(--ink-400);
+            font-size: 10px;
+            line-height: 1.7;
+            text-align: right;
+        }
+        /* =========================================================
+           11. FILTROS
+        ========================================================== */
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 21px;
+        }
+        
+        .filter {
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .54);
+            color: var(--ink-600);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .04em;
+            cursor: pointer;
+            transition: .22s var(--ease);
+        }
+        
+        .filter:hover {
+            transform: translateY(-2px);
+            background: white;
+        }
+        
+        .filter.active {
+            border-color: var(--pink-500);
+            background: var(--pink-500);
+            color: white;
+        }
+        /* =========================================================
+           12. GRID DOS PERFIS
+        ========================================================== */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat( 3, minmax(0, 1fr));
+            gap: 17px;
+        }
+        /* =========================================================
+           13. CARD DE PERFIL
+        ========================================================== */
+        
+        .card {
+            position: relative;
+            overflow: hidden;
+            min-height: 365px;
+            padding: 13px;
+            border: 1px solid rgba(96, 72, 82, .11);
+            border-radius: 23px;
+            background: rgba(255, 255, 255, .76);
+            cursor: pointer;
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s ease, border-color .35s ease;
+            animation: cardAppear .6s var(--ease) both;
+        }
+        
+        .card:nth-child(1) {
+            animation-delay: .03s;
+        }
+        
+        .card:nth-child(2) {
+            animation-delay: .08s;
+        }
+        
+        .card:nth-child(3) {
+            animation-delay: .13s;
+        }
+        
+        .card:nth-child(4) {
+            animation-delay: .18s;
+        }
+        
+        .card:nth-child(5) {
+            animation-delay: .23s;
+        }
+        
+        .card:nth-child(6) {
+            animation-delay: .28s;
+        }
+        
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            background: white;
+            border-color: rgba(96, 72, 82, .18);
+            box-shadow: var(--shadow-md);
+        }
+        /* =========================================================
+           14. ÁREA DA FOTO / LETRA
+        ========================================================== */
+        
+        .card-image {
+            position: relative;
+            height: 205px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 17px;
+            color: white;
+            background: linear-gradient( 135deg, #e8aac0, #c9a3d0);
+        }
+        
+        .card-image::before {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            right: -115px;
+            top: -130px;
+            border: 28px solid rgba(255, 255, 255, .16);
+            border-radius: 50%;
+        }
+        
+        .card-image::after {
+            content: "";
+            position: absolute;
+            width: 115px;
+            height: 115px;
+            left: -55px;
+            bottom: -65px;
+            border: 17px solid rgba(255, 255, 255, .12);
+            border-radius: 50%;
+        }
+        
+        .card:nth-child(1) .card-image {
+            background: linear-gradient( 135deg, #a95f7f, #e4a0b8);
+        }
+        
+        .card:nth-child(2) .card-image {
+            background: linear-gradient( 135deg, #836691, #c9a4d1);
+        }
+        
+        .card:nth-child(3) .card-image {
+            background: linear-gradient( 135deg, #be7276, #efb3a6);
+        }
+        
+        .card:nth-child(4) .card-image {
+            background: linear-gradient( 135deg, #956d56, #e2bd91);
+        }
+        
+        .card:nth-child(5) .card-image {
+            background: linear-gradient( 135deg, #95566f, #d99daf);
+        }
+        
+        .card:nth-child(6) .card-image {
+            background: linear-gradient( 135deg, #725e81, #bda1c7);
+        }
+        
+        .initial {
+            position: relative;
+            z-index: 4;
+            width: 90px;
+            height: 90px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .72);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .20);
+            box-shadow: 0 12px 30px rgba(60, 39, 48, .14);
+            color: white;
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 45px;
+            backdrop-filter: blur(5px);
+            transition: transform .38s var(--ease), background .38s ease;
+        }
+        
+        .card:hover .initial {
+            transform: scale(1.07) rotate(-4deg);
+            background: rgba(255, 255, 255, .29);
+        }
+        
+        .card-label {
+            position: absolute;
+            z-index: 5;
+            left: 13px;
+            top: 13px;
+            padding: 6px 9px;
+            border: 1px solid rgba(255, 255, 255, .46);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .23);
+            color: white;
+            font-size: 7px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            backdrop-filter: blur(6px);
+        }
+        
+        .card-number {
+            position: absolute;
+            z-index: 5;
+            right: 13px;
+            top: 13px;
+            color: rgba(255, 255, 255, .63);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 17px;
+        }
+        /* =========================================================
+           15. INFORMAÇÕES
+        ========================================================== */
+        
+        .card-info {
+            padding: 15px 6px 7px;
+        }
+        
+        .card-info h3 {
+            color: var(--ink-900);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .card-info p {
+            margin-top: 7px;
+            color: var(--ink-500);
+            font-size: 10px;
+            font-weight: 600;
+        }
+        
+        .card-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 13px;
+        }
+        
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 25px;
+            padding: 0 10px;
+            border: 1px solid rgba(216, 117, 152, .13);
+            border-radius: 999px;
+            background: var(--pink-100);
+            color: #986274;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+        
+        .open-card {
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .86);
+            color: var(--ink-600);
+            font-size: 12px;
+            transition: .25s var(--ease);
+        }
+        
+        .card:hover .open-card {
+            transform: translate(2px, -2px);
+            background: var(--cream-50);
+        }
+        /* =========================================================
+           16. FRASE FINAL
+        ========================================================== */
+        
+        .final {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            margin: 0 43px 43px;
+            padding: 28px 31px;
+            overflow: hidden;
+            border: 1px solid rgba(101, 76, 87, .09);
+            border-radius: 22px;
+            background: linear-gradient( 135deg, #ece0f0, #f5dee2);
+        }
+        
+        .final::before {
+            content: "";
+            position: absolute;
+            width: 210px;
+            height: 210px;
+            right: -115px;
+            bottom: -130px;
+            border: 22px solid rgba(255, 255, 255, .20);
+            border-radius: 50%;
+        }
+        
+        .final small {
+            color: var(--lilac-600);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .17em;
+            text-transform: uppercase;
+        }
+        
+        .final h4 {
+            margin-top: 5px;
+            color: var(--ink-900);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 28px;
+            font-weight: 400;
+        }
+        
+        .final p {
+            max-width: 400px;
+            color: var(--ink-600);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+        /* =========================================================
+           17. MODAL
+        ========================================================== */
+        
+        .overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(54, 39, 47, .51);
+            backdrop-filter: blur(11px);
+        }
+        
+        .overlay.show {
+            display: flex;
+            animation: overlayIn .22s ease both;
+        }
+        
+        @keyframes overlayIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .modal {
+            position: relative;
+            width: min(630px, 100%);
+            overflow: hidden;
+            padding: 42px;
+            border: 1px solid rgba(255, 255, 255, .78);
+            border-radius: 29px;
+            background: linear-gradient( 145deg, #fffaf5, #fff0e3);
+            box-shadow: 0 35px 105px rgba(38, 25, 31, .30);
+            animation: modalIn .38s var(--ease) both;
+        }
+        
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .modal::before {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            right: -150px;
+            top: -155px;
+            border: 23px solid rgba(201, 160, 207, .12);
+            border-radius: 50%;
+        }
+        
+        .modal-line {
+            width: 55px;
+            height: 4px;
+            margin-bottom: 24px;
+            border-radius: 999px;
+            background: linear-gradient( 90deg, var(--pink-400), var(--lilac-400));
+        }
+        
+        .modal h2 {
+            position: relative;
+            z-index: 2;
+            color: var(--ink-900);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .modal-subtitle {
+            display: inline-flex;
+            margin-top: 9px;
+            color: var(--lilac-600);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .11em;
+            text-transform: uppercase;
+        }
+        
+        .modal p {
+            margin-top: 21px;
+            color: var(--ink-600);
+            font-size: 12px;
+            line-height: 1.85;
+        }
+        
+        .modal-tip {
+            margin-top: 23px;
+            padding-top: 15px;
+            border-top: 1px solid var(--line);
+            color: var(--ink-400);
+            font-size: 9px;
+        }
+        
+        .close {
+            position: absolute;
+            z-index: 4;
+            top: 16px;
+            right: 16px;
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .90);
+            color: var(--ink-700);
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform .25s var(--ease), background .25s ease;
+        }
+        
+        .close:hover {
+            transform: rotate(90deg);
+            background: var(--pink-100);
+        }
+        /* =========================================================
+           18. RESPONSIVIDADE
+        ========================================================== */
+        
+        @media (max-width: 1050px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            .hero-visual {
+                min-height: 330px;
+            }
+            .grid {
+                grid-template-columns: repeat( 2, minmax(0, 1fr));
+            }
+        }
+        
+        @media (max-width: 720px) {
+            .page {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+            .header {
+                grid-template-columns: auto 1fr auto;
+                min-height: 78px;
+                padding: 13px 15px;
+            }
+            .brand-copy {
+                display: none;
+            }
+            .brand-mark {
+                width: 42px;
+                height: 42px;
+                font-size: 21px;
+            }
+            .header-title {
+                position: static;
+                transform: none;
+                margin-left: 8px;
+                text-align: left;
+            }
+            .header-title small {
+                display: none;
+            }
+            .header-title h1 {
+                font-size: 20px;
+            }
+            .back {
+                padding: 0 11px;
+            }
+            .hero {
+                margin: 12px;
+                border-radius: 23px;
+            }
+            .hero-text {
+                padding: 43px 25px;
+            }
+            .hero-title {
+                font-size: 48px;
+            }
+            .hero-description {
+                font-size: 11px;
+            }
+            .hero-stats {
+                gap: 16px;
+            }
+            .hero-visual {
+                min-height: 300px;
+            }
+            .profiles {
+                padding: 25px 18px 32px;
+            }
+            .profiles-heading {
+                display: block;
+            }
+            .profiles-heading h2 {
+                font-size: 32px;
+            }
+            .profiles-heading p {
+                margin-top: 10px;
+                text-align: left;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                min-height: 350px;
+            }
+            .final {
+                margin: 0 18px 25px;
+                display: block;
+                padding: 25px;
+            }
+            .final p {
+                margin-top: 10px;
+            }
+            .modal {
+                padding: 35px 24px;
+            }
+            .modal h2 {
+                font-size: 33px;
+            }
+        }
+        
+        @media (max-width: 430px) {
+            .header-title h1 {
+                font-size: 17px;
+            }
+            .hero-title {
+                font-size: 42px;
+            }
+            .visual-center {
+                width: 130px;
+                height: 130px;
+            }
+            .visual-center strong {
+                font-size: 53px;
+            }
+            .visual-orbit {
+                width: 235px;
+                height: 235px;
+            }
+            .card-image {
+                height: 185px;
+            }
+        }
+        /* =========================================================
+           19. ACESSIBILIDADE / MOVIMENTO
+        ========================================================== */
+        
+        .card:focus-visible,
+        button:focus-visible {
+            outline: 3px solid rgba(150, 112, 164, .35);
+            outline-offset: 3px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="page">
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="header">
+
+
+            <div class="brand-area">
+
+                <div class="brand-mark">
+                    E
+                </div>
+
+
+                <div class="brand-copy">
+
+                    <strong>
+                        Elas Empreendedoras
+                    </strong>
+
+                    <span>
+                        Histórias que inspiram
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-title">
+
+                <small>
+                    Nossa principal inspiração
+                </small>
+
+                <h1>
+                    Mulheres Empreendedoras
+                </h1>
+
+            </div>
+
+
+            <div class="header-action">
+
+                <button class="back" onclick="window.location.href='Home.html'">
+                    ←
+                    Voltar
+                </button>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+
+            <div class="hero-text">
+
+
+                <div class="eyebrow">
+                    Elas que fazem acontecer
+                </div>
+
+
+                <h2 class="hero-title">
+                    Histórias que
+                    <em>transformam</em> ideias em realidade.
+                </h2>
+
+
+                <p class="hero-description">
+
+                    Conheça mulheres que construíram suas próprias trajetórias, enfrentaram desafios e transformaram ideias em projetos, negócios e oportunidades.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+
+                    <button class="primary-btn" onclick="document.getElementById('perfis').scrollIntoView({ behavior: 'smooth' })">
+                        Conhecer histórias
+                        →
+                    </button>
+
+
+                    <button class="secondary-btn" onclick="window.location.href='Home.html'">
+                        Explorar plataforma
+                    </button>
+
+
+                </div>
+
+
+
+                <div class="hero-stats">
+
+
+                    <div class="stat">
+
+                        <strong>
+                            06
+                        </strong>
+
+                        <span>
+                            histórias
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            05
+                        </strong>
+
+                        <span>
+                            áreas diferentes
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            01
+                        </strong>
+
+                        <span>
+                            propósito
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 VISUAL
+            ================================================== -->
+
+            <aside class="hero-visual">
+
+
+                <div class="visual-heading">
+                    Mulheres que deixam marcas
+                </div>
+
+
+                <div class="visual-orbit"></div>
+
+
+                <div class="visual-center">
+
+                    <div>
+
+                        <strong>
+                            ELAS
+                        </strong>
+
+                        <span>
+                            criam caminhos
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="orbit-word word-1">
+                    Coragem
+                </div>
+
+
+                <div class="orbit-word word-2">
+                    Liderança
+                </div>
+
+
+                <div class="orbit-word word-3">
+                    Criatividade
+                </div>
+
+
+                <div class="orbit-word word-4">
+                    Impacto
+                </div>
+
+
+            </aside>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PERFIS
+        ====================================================== -->
+
+        <section class="profiles" id="perfis">
+
+
+            <div class="profiles-heading">
+
+
+                <div>
+
+                    <div class="section-kicker">
+                        Em destaque
+                    </div>
+
+                    <h2>
+                        Mulheres que abriram caminhos.
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Diferentes áreas, diferentes trajetórias, mas um ponto em comum: transformar uma ideia em algo maior.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FILTROS
+            ================================================== -->
+
+            <div class="filters">
+
+
+                <button class="filter active" data-filter="Todos" onclick="filtrar('Todos', this)">
+                    Todas
+                </button>
+
+
+                <button class="filter" data-filter="Liderança" onclick="filtrar('Liderança', this)">
+                    Liderança
+                </button>
+
+
+                <button class="filter" data-filter="Beleza" onclick="filtrar('Beleza', this)">
+                    Beleza
+                </button>
+
+
+                <button class="filter" data-filter="Negócios" onclick="filtrar('Negócios', this)">
+                    Negócios
+                </button>
+
+
+                <button class="filter" data-filter="Inovação" onclick="filtrar('Inovação', this)">
+                    Inovação
+                </button>
+
+
+                <button class="filter" data-filter="Impacto" onclick="filtrar('Impacto', this)">
+                    Impacto
+                </button>
+
+
+                <button class="filter" data-filter="Empreendedorismo" onclick="filtrar('Empreendedorismo', this)">
+                    Empreendedorismo
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GRID
+            ================================================== -->
+
+            <div class="grid">
+
+
+
+                <!-- =================================================
+                     LUÍZA
+                ================================================== -->
+
+                <article class="card" data-category="Liderança" data-title="Luiza Helena Trajano" data-subtitle="Magazine Luiza • Liderança" data-description="Empresária brasileira conhecida por sua trajetória à frente do Magazine Luiza e por sua atuação em iniciativas voltadas ao empreendedorismo e à liderança feminina."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Liderança
+                        </span>
+
+
+                        <span class="card-number">
+                            01
+                        </span>
+
+
+                        <div class="initial">
+                            L
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Luiza Helena Trajano
+                        </h3>
+
+
+                        <p>
+                            Magazine Luiza
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Liderança
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     ZICA
+                ================================================== -->
+
+                <article class="card" data-category="Beleza" data-title="Zica Assis" data-subtitle="Beleza Natural • Beleza" data-description="Empreendedora brasileira e cofundadora do Instituto Beleza Natural, negócio criado a partir da experiência e necessidade de oferecer produtos voltados para cabelos crespos e cacheados."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Beleza
+                        </span>
+
+
+                        <span class="card-number">
+                            02
+                        </span>
+
+
+                        <div class="initial">
+                            Z
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Zica Assis
+                        </h3>
+
+
+                        <p>
+                            Beleza Natural
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Beleza
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     SÔNIA
+                ================================================== -->
+
+                <article class="card" data-category="Negócios" data-title="Sônia Hess" data-subtitle="Dudalina • Negócios" data-description="Empresária brasileira que participou da expansão da Dudalina e se tornou uma referência de gestão, liderança e empreendedorismo."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Negócios
+                        </span>
+
+
+                        <span class="card-number">
+                            03
+                        </span>
+
+
+                        <div class="initial">
+                            S
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Sônia Hess
+                        </h3>
+
+
+                        <p>
+                            Dudalina
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Negócios
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CAMILA
+                ================================================== -->
+
+                <article class="card" data-category="Inovação" data-title="Camila Farani" data-subtitle="Investimentos • Inovação" data-description="Empreendedora e investidora brasileira conhecida por sua atuação no ecossistema de startups e por incentivar novos negócios."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Inovação
+                        </span>
+
+
+                        <span class="card-number">
+                            04
+                        </span>
+
+
+                        <div class="initial">
+                            C
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Camila Farani
+                        </h3>
+
+
+                        <p>
+                            Investimentos
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Inovação
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MONIQUE
+                ================================================== -->
+
+                <article class="card" data-category="Impacto" data-title="Monique Evelle" data-subtitle="Inovação social • Impacto" data-description="Empreendedora e comunicadora brasileira que atua com inovação, negócios e iniciativas de impacto social." onclick="abrir(this)"
+                    tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Impacto
+                        </span>
+
+
+                        <span class="card-number">
+                            05
+                        </span>
+
+
+                        <div class="initial">
+                            M
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Monique Evelle
+                        </h3>
+
+
+                        <p>
+                            Inovação social
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Impacto
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     ANA
+                ================================================== -->
+
+                <article class="card" data-category="Empreendedorismo" data-title="Ana Fontes" data-subtitle="Rede Mulher Empreendedora • Empreendedorismo" data-description="Empreendedora social e fundadora da Rede Mulher Empreendedora, iniciativa voltada ao desenvolvimento e fortalecimento de mulheres empreendedoras."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Empreendedorismo
+                        </span>
+
+
+                        <span class="card-number">
+                            06
+                        </span>
+
+
+                        <div class="initial">
+                            A
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Ana Fontes
+                        </h3>
+
+
+                        <p>
+                            Rede Mulher Empreendedora
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Empreendedorismo
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL
+        ====================================================== -->
+
+        <section class="final">
+
+
+            <div>
+
+                <small>
+                    O que fica dessa jornada
+                </small>
+
+
+                <h4>
+                    Uma história pode despertar a próxima.
+                </h4>
+
+            </div>
+
+
+            <p>
+
+                Conhecer diferentes trajetórias é também encontrar inspiração para enxergar novas possibilidades e caminhos.
+
+            </p>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         MODAL
+    ========================================================== -->
+
+    <div class="overlay" id="overlay">
+
+
+        <div class="modal">
+
+
+            <button class="close" onclick="fechar()" aria-label="Fechar">
+                ×
+            </button>
+
+
+            <div class="modal-line"></div>
+
+
+            <h2 id="modalTitle"></h2>
+
+
+            <div class="modal-subtitle" id="modalSubtitle"></div>
+
+
+            <p id="modalDescription"></p>
+
+
+            <div class="modal-tip">
+                Clique fora da janela ou pressione ESC para fechar.
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+        /* =========================================================
+                                           MODAL
+                                        ========================================================== */
+
+        function abrir(card) {
+
+            document
+                .getElementById("modalTitle")
+                .textContent =
+                card.dataset.title;
+
+
+            document
+                .getElementById("modalSubtitle")
+                .textContent =
+                card.dataset.subtitle;
+
+
+            document
+                .getElementById("modalDescription")
+                .textContent =
+                card.dataset.description;
+
+
+            document
+                .getElementById("overlay")
+                .classList.add("show");
+
+        }
+
+
+        function fechar() {
+
+            document
+                .getElementById("overlay")
+                .classList.remove("show");
+
+        }
+
+
+        /* =========================================================
+           CLIQUE FORA
+        ========================================================== */
+
+        document
+            .getElementById("overlay")
+            .addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target === this
+                    ) {
+
+                        fechar();
+
+                    }
+
+                }
+            );
+
+
+        /* =========================================================
+           ESC
+        ========================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    fechar();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           ENTER / ESPAÇO
+        ========================================================== */
+
+        document
+            .querySelectorAll(".card")
+            .forEach(function(card) {
+
+                card.addEventListener(
+                    "keydown",
+                    function(event) {
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            abrir(card);
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+        /* =========================================================
+           FILTRO
+        ========================================================== */
+
+        function filtrar(categoria, botao) {
+
+
+            document
+                .querySelectorAll(".filter")
+                .forEach(function(item) {
+
+                    item.classList.remove("active");
+
+                });
+
+
+            botao.classList.add("active");
+
+
+            document
+                .querySelectorAll(".card")
+                .forEach(function(card) {
+
+
+                    const mostrar =
+                        categoria === "Todos" ||
+                        card.dataset.category === categoria;
+
+
+                    if (mostrar) {
+
+                        card.style.display =
+                            "";
+
+                    } else {
+
+                        card.style.display =
+                            "none";
+
+                    }
+
+                });
+
+        }
+    </script>
+
+
+</body>
+
+</html>

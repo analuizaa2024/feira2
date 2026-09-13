@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elas Empreendedoras | Página Inicial</title>
+    <meta name="description" content="Elas Empreendedoras: uma plataforma de inspiração, conhecimento e conexão para o empreendedorismo feminino.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- ================================================================
+     PÁGINA
+================================================================ -->
+    <main class="page-shell">
+
+        <!-- ============================================================
+         HEADER
+    ============================================================= -->
+        <header class="site-header">
+
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <button class="brand" id="brandButton" type="button" aria-label="Voltar ao início" title="Início">
+                <img
+                    class="brand-logo"
+                    src="logomarca.png"
+                    alt="Elas Empreendedoras"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                >
+                <span
+                    style="
+                        display:none;
+                        width:66px;
+                        height:66px;
+                        place-items:center;
+                        border-radius:50%;
+                        background:#fff;
+                        color:#e58bab;
+                        font-family:'DM Serif Display',Georgia,serif;
+                        font-size:28px;
+                    "
+                    aria-hidden="true"
+                >E</span>
+            </button>
+
+                <!-- PESQUISA -->
+                <form class="search-bar" id="searchForm" role="search">
+                    <span class="search-icon" aria-hidden="true"></span>
+
+                    <input id="searchInput" type="search" placeholder="Pesquise empreendedoras, áreas ou temas..." autocomplete="off" aria-label="Pesquisar no site">
+
+                    <button class="search-submit" type="submit">
+                    Pesquisar
+                </button>
+                </form>
+
+                <!-- AÇÕES -->
+                <div class="header-actions">
+
+                    <button class="menu-button" id="menuButton" type="button" aria-label="Abrir central de navegação" aria-controls="sideMenu" aria-expanded="false" title="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                    <button class="icon-button" id="profileButton" type="button" aria-label="Abrir opções do perfil" aria-expanded="false" aria-controls="profileDropdown" title="Perfil">
+                    <span class="profile-mark" aria-hidden="true"></span>
+                </button>
+
+                    <!-- DROPDOWN PERFIL -->
+                    <div class="profile-dropdown" id="profileDropdown">
+
+                        <div class="profile-summary">
+                            <div class="profile-avatar" id="profileInitial">E</div>
+
+                            <div>
+                                <strong id="profileName">Elas Empreendedoras</strong>
+                                <small>Área do participante</small>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-divider"></div>
+
+                        <a class="dropdown-link" href="perfil.html">
+                            <span class="dot"></span> Meu perfil
+                        </a>
+
+                        <a class="dropdown-link" href="favoritos.html">
+                            <span class="dot"></span> Favoritos
+                        </a>
+
+                        <a class="dropdown-link" href="livros.html">
+                            <span class="dot"></span> Biblioteca de livros
+                        </a>
+
+                        <div class="dropdown-divider"></div>
+
+                        <button class="dropdown-link" id="logoutButton" type="button">
+                        <span class="dot"></span>
+                        Encerrar sessão
+                    </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+        <!-- ============================================================
+         CONTEÚDO
+    ============================================================= -->
+        <section class="main-content" id="conteudo">
+
+            <div class="container">
+
+                <!-- ====================================================
+                 HERO
+            ===================================================== -->
+                <section class="hero" aria-labelledby="heroTitle">
+
+                    <article class="hero-panel">
+
+                        <div class="hero-eyebrow">
+                            Plataforma de inspiração e conexão
+                        </div>
+
+                        <h1 class="hero-title" id="heroTitle">
+                            Ideias que começam pequenas.
+                            <em>Impactos que crescem.</em>
+                        </h1>
+
+                        <p class="hero-copy">
+                            O Elas Empreendedoras reúne histórias, referências, áreas de atuação e conteúdos para valorizar o empreendedorismo feminino e transformar inspiração em possibilidade.
+                        </p>
+
+                        <div class="hero-actions">
+
+                            <button class="btn-primary" id="exploreButton" type="button">
+                            Explorar empreendedoras
+                        </button>
+
+                            <button class="btn-secondary" id="heroBooksButton" type="button">
+                            Acessar biblioteca
+                        </button>
+
+                        </div>
+
+                        <div class="hero-meta">
+
+                            <div class="hero-meta-item">
+                                <strong>20+</strong>
+                                <span>perfis de referência</span>
+                            </div>
+
+                            <div class="hero-meta-item">
+                                <strong>10</strong>
+                                <span>áreas de atuação</span>
+                            </div>
+
+                            <div class="hero-meta-item">
+                                <strong>01</strong>
+                                <span>rede de conhecimento</span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <aside class="hero-art" aria-label="Mensagem institucional">
+
+                        <div class="art-label">
+                            Nossa identidade
+                        </div>
+
+                        <div class="art-title">
+                            Conhecimento também é uma forma de abrir caminhos.
+                        </div>
+
+                        <p class="art-note">
+                            Uma experiência digital pensada para apresentar trajetórias, estimular novas ideias e tornar o empreendedorismo feminino mais visível.
+                        </p>
+
+                        <div class="art-signature">
+                            ELAS EMPREENDEDORAS
+                        </div>
+
+                    </aside>
+
+                </section>
+
+                <!-- ====================================================
+                 DESTAQUES
+            ===================================================== -->
+                <section class="section" id="destaques" aria-labelledby="destaquesTitle">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <div class="section-kicker">Em evidência</div>
+
+                            <h2 class="section-title" id="destaquesTitle">
+                                Conheça quem está criando
+                            </h2>
+                        </div>
+
+                        <p class="section-description">
+                            Navegue por diferentes áreas do empreendedorismo feminino e encontre referências para novas ideias.
+                        </p>
+
+                    </div>
+
+                    <div class="destaques-category-bar">
+                        <nav class="category-nav compact-category-nav" id="categoryNavDestaques" aria-label="Buscar por categoria">
+                            <button class="category-chip active" type="button" data-category="Todos">
+                            Todos
+                        </button>
+
+                            <button class="category-chip" type="button" data-category="Moda">
+                            Moda
+                        </button>
+
+                            <button class="category-chip" type="button" data-category="Beleza">
+                            Beleza
+                        </button>
+
+                            <button class="category-chip" type="button" data-category="Tecnologia">
+                            Tecnologia
+                        </button>
+
+                            <button class="category-chip" type="button" data-category="Gastronomia">
+                            Gastronomia
+                        </button>
+
+                            <button class="category-chip" type="button" data-category="Artesanato">
+                            Artesanato
+                        </button>
+
+                            <button class="category-chip" type="button" data-category="Educação">
+                            Educação
+                        </button>
+
+                            <button class="category-chip" type="button" data-category="Negócios">
+                            Negócios
+                        </button>
+
+                            <button class="category-chip" type="button" data-category="Marketing">
+                            Marketing
+                        </button>
+
+                            <button class="category-chip" type="button" id="booksTopButton">
+                            Livros
+                        </button>
+                        </nav>
+                    </div>
+
+                    <div class="entrepreneur-grid" id="entrepreneurGrid">
+                        <!-- preenchido pelo JavaScript -->
+                    </div>
+
+                    <div class="results-bar">
+                        <div class="results-status" id="resultsStatus">
+                            Exibindo <strong>20</strong> perfis de referência.
+                        </div>
+
+                        <button class="clear-search" id="clearSearch" type="button">
+                        Limpar pesquisa
+                    </button>
+                    </div>
+
+                </section>
+
+                <!-- ====================================================
+                 CATEGORIAS
+            ===================================================== -->
+                <section class="section" id="locais" aria-labelledby="locaisTitle">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <div class="section-kicker">Áreas de empreendedorismo</div>
+
+                            <h2 class="section-title" id="locaisTitle">
+                                Encontre por local
+                            </h2>
+                        </div>
+
+                        <p class="section-description">
+
+                        </p>
+
+                    </div>
+
+                    <div class="topic-grid">
+
+                        <article class="topic-card" data-topic="Moda">
+                            <div class="topic-number">01</div>
+                            <div class="topic-name">Moda</div>
+                            <p class="topic-copy">
+                                Criação, marcas autorais e identidade.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Beleza">
+                            <div class="topic-number">02</div>
+                            <div class="topic-name">Beleza</div>
+                            <p class="topic-copy">
+                                Produtos, serviços e novas experiências.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Tecnologia">
+                            <div class="topic-number">03</div>
+                            <div class="topic-name">Tecnologia</div>
+                            <p class="topic-copy">
+                                Soluções digitais e inovação.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Gastronomia">
+                            <div class="topic-number">04</div>
+                            <div class="topic-name">Gastronomia</div>
+                            <p class="topic-copy">
+                                Produção artesanal e experiências.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Artesanato">
+                            <div class="topic-number">05</div>
+                            <div class="topic-name">Artesanato</div>
+                            <p class="topic-copy">
+                                Produtos autorais e personalizados.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Educação">
+                            <div class="topic-number">06</div>
+                            <div class="topic-name">Educação</div>
+                            <p class="topic-copy">
+                                Conhecimento, cursos e formação.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Negócios">
+                            <div class="topic-number">07</div>
+                            <div class="topic-name">Negócios</div>
+                            <p class="topic-copy">
+                                Gestão, estratégia e crescimento.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Marketing">
+                            <div class="topic-number">08</div>
+                            <div class="topic-name">Marketing</div>
+                            <p class="topic-copy">
+                                Comunicação e posicionamento.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Tecnologia">
+                            <div class="topic-number">09</div>
+                            <div class="topic-name">Digital</div>
+                            <p class="topic-copy">
+                                Produtos digitais e presença online.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Moda">
+                            <div class="topic-number">10</div>
+                            <div class="topic-name">Criatividade</div>
+                            <p class="topic-copy">
+                                Ideias, processos e soluções autorais.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Negócios">
+                            <div class="topic-number">11</div>
+                            <div class="topic-name">Finanças</div>
+                            <p class="topic-copy">
+                                Planejamento e organização do negócio.
+                            </p>
+                        </article>
+
+                        <article class="topic-card" data-topic="Educação">
+                            <div class="topic-number">12</div>
+                            <div class="topic-name">Desenvolvimento</div>
+                            <p class="topic-copy">
+                                Aprendizado e crescimento profissional.
+                            </p>
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ====================================================
+                 PALESTRANTES
+            ===================================================== -->
+                <section class="section" id="palestrantes" aria-labelledby="palestrantesTitle">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <div class="section-kicker">Palestrantes que movimentam seus projetos</div>
+
+                            <h2 class="section-title" id="palestrantesTitle">
+                                Encontre por palestrantes ativos
+                            </h2>
+                        </div>
+
+                        <p class="section-description">
+
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- ====================================================
+                 MEUPROJETO
+            ===================================================== -->
+                <section class="section" id="meuprojeto" aria-labelledby="meuprojetoTitle">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <div class="section-kicker">Meu Projeto</div>
+
+                            <h2 class="section-title" id="meuprojetoTitle">
+                                Crie seu próprio projeto!
+                            </h2>
+                        </div>
+
+                        <p class="section-description">
+                            Desenvolva seu projeto com ferramentas e recursos dedicados.
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- ====================================================
+                 PROPOSTA / INSTITUCIONAL
+            ===================================================== -->
+                <section class="section" id="sobre" aria-labelledby="sobreTitle">
+
+                    <div class="institutional">
+
+                        <article class="institutional-card highlight">
+
+                            <div class="section-kicker">Nossa proposta</div>
+
+                            <h2 class="institutional-title" id="sobreTitle">
+                                Mais do que inspiração: repertório para começar.
+                            </h2>
+
+                            <p class="institutional-copy">
+                                A plataforma foi pensada para unir informação, referências e descoberta em uma experiência visual acolhedora, organizada e coerente com a proposta do empreendedorismo feminino.
+                            </p>
+
+                            <div class="pill-list">
+                                <span class="pill">Histórias</span>
+                                <span class="pill">Conhecimento</span>
+                                <span class="pill">Conexão</span>
+                                <span class="pill">Inovação</span>
+                                <span class="pill">Inspiração</span>
+                            </div>
+
+                        </article>
+
+                        <article class="institutional-card">
+
+                            <div class="section-kicker">Experiência</div>
+
+                            <h2 class="institutional-title">
+                                Um espaço para descobrir novas possibilidades.
+                            </h2>
+
+                            <p class="institutional-copy">
+                                Pesquise por nome, área ou descrição; filtre conteúdos por categoria; conheça perfis e visite a biblioteca de livros para ampliar seu repertório.
+                            </p>
+
+                            <div class="stats-row">
+
+                                <div class="stat">
+                                    <strong>20+</strong>
+                                    <span>perfis demonstrativos</span>
+                                </div>
+
+                                <div class="stat">
+                                    <strong>10</strong>
+                                    <span>categorias no menu</span>
+                                </div>
+
+                                <div class="stat">
+                                    <strong>01</strong>
+                                    <span>experiência integrada</span>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- ====================================================
+                 CTA FINAL
+            ===================================================== -->
+                <section class="section" aria-label="Convite final">
+
+                    <div class="cta">
+
+                        <div>
+                            <div class="cta-title">
+                                Comece explorando uma história.
+                            </div>
+
+                            <div class="cta-copy">
+                                Talvez uma delas desperte a próxima ideia.
+                            </div>
+                        </div>
+
+                        <button class="cta-button" id="ctaButton" type="button">
+                        EXPLORAR AGORA
+                    </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="sharedMenu"></div>
+
+    <!-- ================================================================
+     MODAL
+================================================================ -->
+    <div class="modal-layer" id="modalLayer" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+
+        <article class="modal">
+
+            <button class="modal-close" id="modalClose" type="button" aria-label="Fechar janela">
+            ×
+        </button>
+
+            <div class="modal-cover" id="modalCover">
+                E
+            </div>
+
+            <div class="modal-kicker" id="modalKicker">
+                Perfil em destaque
+            </div>
+
+            <h2 id="modalTitle">
+                Empreendedora
+            </h2>
+
+            <p id="modalDescription">
+                Informações do perfil selecionado.
+            </p>
+
+        </article>
+
+    </div>
+
+    <!-- ================================================================
+     JAVASCRIPT
+     Mantido no próprio HTML para você não precisar de um terceiro
+     arquivo neste momento.
+================================================================ -->
+    <script>
+        (() => {
+
+            "use strict";
+
+            /* =============================================================
+               01. DADOS
+            ============================================================= */
+            const empreendedoras = [{
+                nome: "Ana Moda",
+                categoria: "Moda",
+                descricao: "Empreendedora especializada em moda feminina, com foco em peças autorais e identidade de marca."
+            }, {
+                nome: "Beatriz Beauty",
+                categoria: "Beleza",
+                descricao: "Produtos e serviços de beleza desenvolvidos para mulheres, com atenção à experiência e ao cuidado."
+            }, {
+                nome: "Camila Tech",
+                categoria: "Tecnologia",
+                descricao: "Soluções digitais e tecnologia aplicadas a pequenos negócios e novos projetos."
+            }, {
+                nome: "Diana Gourmet",
+                categoria: "Gastronomia",
+                descricao: "Gastronomia artesanal e produtos criados para transformar receitas em experiências."
+            }, {
+                nome: "Elisa Artes",
+                categoria: "Artesanato",
+                descricao: "Artesanato autoral e peças personalizadas que valorizam criatividade e produção manual."
+            }, {
+                nome: "Fernanda Edu",
+                categoria: "Educação",
+                descricao: "Conteúdos, cursos e iniciativas voltadas ao desenvolvimento profissional."
+            }, {
+                nome: "Gabriela Business",
+                categoria: "Negócios",
+                descricao: "Consultoria e estratégias para organização, posicionamento e crescimento de negócios."
+            }, {
+                nome: "Helena Marketing",
+                categoria: "Marketing",
+                descricao: "Marketing digital e posicionamento de marcas com foco em comunicação clara."
+            }, {
+                nome: "Isabela Moda",
+                categoria: "Moda",
+                descricao: "Marca independente de roupas femininas com proposta autoral e modelagem inclusiva."
+            }, {
+                nome: "Juliana Beauty",
+                categoria: "Beleza",
+                descricao: "Cosméticos e cuidados pessoais com foco em inovação e experiência."
+            }, {
+                nome: "Karina Digital",
+                categoria: "Tecnologia",
+                descricao: "Produtos digitais e soluções inovadoras para fortalecer novas ideias."
+            }, {
+                nome: "Larissa Doces",
+                categoria: "Gastronomia",
+                descricao: "Doces artesanais e confeitaria com foco em encomendas e experiências."
+            }, {
+                nome: "Mariana Criativa",
+                categoria: "Artesanato",
+                descricao: "Produtos artesanais personalizados para presentes, eventos e decoração."
+            }, {
+                nome: "Natália Cursos",
+                categoria: "Educação",
+                descricao: "Cursos e conteúdos educacionais direcionados ao empreendedorismo feminino."
+            }, {
+                nome: "Olívia Negócios",
+                categoria: "Negócios",
+                descricao: "Estratégias de planejamento, organização e crescimento empresarial."
+            }, {
+                nome: "Paula Marketing",
+                categoria: "Marketing",
+                descricao: "Estratégias de comunicação e presença digital para pequenos negócios."
+            }, {
+                nome: "Renata Fashion",
+                categoria: "Moda",
+                descricao: "Moda autoral e coleções com foco em identidade, criatividade e tendências."
+            }, {
+                nome: "Sofia Beauty",
+                categoria: "Beleza",
+                descricao: "Cuidados pessoais e produtos de beleza voltados a uma rotina prática."
+            }, {
+                nome: "Tatiana Tech",
+                categoria: "Tecnologia",
+                descricao: "Tecnologia aplicada ao empreendedorismo, com foco em processos e automação."
+            }, {
+                nome: "Valentina Gourmet",
+                categoria: "Gastronomia",
+                descricao: "Culinária artesanal e experiências gastronômicas para diferentes ocasiões."
+            }];
+
+            /* =============================================================
+               02. ELEMENTOS
+            ============================================================= */
+            const grid = document.getElementById("entrepreneurGrid");
+            const searchForm = document.getElementById("searchForm");
+            const searchInput = document.getElementById("searchInput");
+            const resultsStatus = document.getElementById("resultsStatus");
+            const clearSearch = document.getElementById("clearSearch");
+
+            const categoryButtons = [
+                ...document.querySelectorAll(".category-chip[data-category]")
+            ];
+
+            const topicCards = [
+                ...document.querySelectorAll(".topic-card[data-topic]")
+            ];
+
+            const modalLayer = document.getElementById("modalLayer");
+            const modalClose = document.getElementById("modalClose");
+            const modalTitle = document.getElementById("modalTitle");
+            const modalKicker = document.getElementById("modalKicker");
+            const modalDescription = document.getElementById("modalDescription");
+            const modalCover = document.getElementById("modalCover");
+
+            const profileButton = document.getElementById("profileButton");
+            const profileDropdown = document.getElementById("profileDropdown");
+
+            let categoriaAtual = "Todos";
+            let ultimaBusca = "";
+
+            /* =============================================================
+               03. UTILITÁRIOS
+            ============================================================= */
+            function normalizar(texto) {
+                return String(texto)
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .toLowerCase()
+                    .trim();
+            }
+
+            function primeiraLetra(nome) {
+                return nome.trim().charAt(0).toUpperCase();
+            }
+
+            function atualizarCategoriasAtivas() {
+                categoryButtons.forEach(button => {
+                    const ativa = button.dataset.category === categoriaAtual;
+                    button.classList.toggle("active", ativa);
+                });
+            }
+
+            /* =============================================================
+               04. RENDERIZAÇÃO DOS CARDS
+            ============================================================= */
+            function renderCards(lista) {
+
+                grid.innerHTML = "";
+
+                if (!lista.length) {
+
+                    grid.innerHTML = `
+                <div class="empty-state">
+                    <strong>Nenhuma empreendedora encontrada.</strong>
+                    <p>
+                        Tente outra palavra ou escolha uma categoria diferente.
+                    </p>
+                </div>
+            `;
+
+                    return;
+                }
+
+                lista.forEach((item, index) => {
+
+                    const card = document.createElement("article");
+
+                    card.className = "entrepreneur-card";
+
+                    const variation = index % 4;
+
+                    card.innerHTML = `
+                <div class="card-image ${variation === 1 ? "alt-1" : ""} ${variation === 2 ? "alt-2" : ""} ${variation === 3 ? "alt-3" : ""}">
+                    <div class="card-orbit"></div>
+
+                    <span class="card-badge">
+                        ${item.categoria}
+                    </span>
+
+                    <div class="card-initial">
+                        ${primeiraLetra(item.nome)}
+                    </div>
+                </div>
+
+                <div class="card-info">
+                    <div class="card-name">
+                        ${item.nome}
+                    </div>
+
+                    <div class="card-category">
+                        ${item.categoria}
+                    </div>
+
+                    <div class="card-description">
+                        ${item.descricao}
+                    </div>
+
+                    <div class="card-link">
+                        Ver detalhes
+                    </div>
+                </div>
+            `;
+
+                    card.addEventListener("click", () => {
+                        abrirModal(item);
+                    });
+
+                    grid.appendChild(card);
+                });
+            }
+
+            /* =============================================================
+               05. FILTRO
+            ============================================================= */
+            function filtrar() {
+
+                const termo = normalizar(searchInput.value);
+
+                ultimaBusca = termo;
+
+                const resultado = empreendedoras.filter(item => {
+
+                    const categoriaOk =
+                        categoriaAtual === "Todos" ||
+                        item.categoria === categoriaAtual;
+
+                    const texto =
+                        normalizar(
+                            `${item.nome} ${item.categoria} ${item.descricao}`
+                        );
+
+                    const buscaOk = !termo ||
+                        texto.includes(termo);
+
+                    return categoriaOk && buscaOk;
+                });
+
+                renderCards(resultado);
+
+                const quantidade = resultado.length;
+
+                resultsStatus.innerHTML =
+                    `Exibindo <strong>${quantidade}</strong> ${quantidade === 1 ? "perfil" : "perfis"} de referência.`;
+
+                clearSearch.classList.toggle(
+                    "visible",
+                    Boolean(termo) || categoriaAtual !== "Todos"
+                );
+            }
+
+            /* =============================================================
+               06. CATEGORIAS DO HEADER
+            ============================================================= */
+            categoryButtons.forEach(button => {
+
+                button.addEventListener("click", () => {
+
+                    const categoria = button.dataset.category;
+
+                    categoriaAtual = categoria;
+
+                    atualizarCategoriasAtivas();
+
+                    searchInput.value = "";
+
+                    filtrar();
+
+                    document
+                        .getElementById("destaques")
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                });
+            });
+
+            /* =============================================================
+               07. CATEGORIAS DO CORPO
+            ============================================================= */
+            topicCards.forEach(card => {
+
+                card.addEventListener("click", () => {
+
+                    const categoria = card.dataset.topic;
+
+                    categoriaAtual = categoria;
+
+                    atualizarCategoriasAtivas();
+
+                    searchInput.value = "";
+
+                    filtrar();
+
+                    document
+                        .getElementById("destaques")
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                });
+            });
+
+            /* =============================================================
+               08. PESQUISA
+            ============================================================= */
+            searchForm.addEventListener("submit", event => {
+                event.preventDefault();
+                filtrar();
+
+                document
+                    .getElementById("destaques")
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+            });
+
+            searchInput.addEventListener("input", () => {
+                filtrar();
+            });
+
+            clearSearch.addEventListener("click", () => {
+
+                categoriaAtual = "Todos";
+                searchInput.value = "";
+
+                atualizarCategoriasAtivas();
+                filtrar();
+            });
+
+            /* =============================================================
+               09. MODAL
+            ============================================================= */
+            function abrirModal(item) {
+
+                modalKicker.textContent = item.categoria;
+                modalTitle.textContent = item.nome;
+                modalDescription.textContent = item.descricao;
+
+                modalCover.textContent = primeiraLetra(item.nome);
+
+                modalLayer.classList.add("show");
+
+                document.body.style.overflow = "hidden";
+
+                modalClose.focus();
+            }
+
+            function fecharModal() {
+
+                modalLayer.classList.remove("show");
+
+                document.body.style.overflow = "";
+            }
+
+            modalClose.addEventListener("click", fecharModal);
+
+            modalLayer.addEventListener("click", event => {
+
+                if (event.target === modalLayer) {
+                    fecharModal();
+                }
+            });
+
+            /* =============================================================
+               13. DROPDOWN DO PERFIL
+            ============================================================= */
+            profileButton.addEventListener("click", event => {
+
+                event.stopPropagation();
+
+                const aberto =
+                    profileDropdown.classList.toggle("open");
+
+                profileButton.setAttribute(
+                    "aria-expanded",
+                    String(aberto)
+                );
+            });
+
+            document.addEventListener("click", event => {
+
+                if (
+                    profileDropdown.classList.contains("open") &&
+                    !profileDropdown.contains(event.target) &&
+                    event.target !== profileButton
+                ) {
+
+                    profileDropdown.classList.remove("open");
+
+                    profileButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+            });
+
+            /* =============================================================
+               14. BOTÕES DA HERO
+            ============================================================= */
+            document
+                .getElementById("exploreButton")
+                .addEventListener("click", () => {
+
+                    document
+                        .getElementById("destaques")
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                });
+
+            function abrirLivros() {
+                window.location.href = "livros.html";
+            }
+
+            document
+                .getElementById("heroBooksButton")
+                .addEventListener("click", abrirLivros);
+
+            document
+                .getElementById("booksTopButton")
+                .addEventListener("click", abrirLivros);
+
+            document
+                .getElementById("ctaButton")
+                .addEventListener("click", () => {
+
+                    document
+                        .getElementById("destaques")
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                });
+
+            document
+                .getElementById("brandButton")
+                .addEventListener("click", () => {
+
+                    categoriaAtual = "Todos";
+                    searchInput.value = "";
+
+                    atualizarCategoriasAtivas();
+                    filtrar();
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+
+            /* =============================================================
+               15. LOGOUT
+            ============================================================= */
+            function sair() {
+
+                localStorage.removeItem("usuarioLogado");
+
+                window.location.href = "index_novo.html";
+            }
+
+            document
+                .getElementById("logoutButton")
+                .addEventListener("click", sair);
+
+            /* =============================================================
+               16. TECLADO
+            ============================================================= */
+            document.addEventListener("keydown", event => {
+
+                if (event.key !== "Escape") {
+                    return;
+                }
+
+                if (modalLayer.classList.contains("show")) {
+                    fecharModal();
+                }
+
+                if (sideMenu.classList.contains("open")) {
+                    fecharMenu();
+                }
+
+                if (profileDropdown.classList.contains("open")) {
+
+                    profileDropdown.classList.remove("open");
+
+                    profileButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+            });
+
+            /* =============================================================
+               17. PERFIL — NOME DO CADASTRO
+               Compatível com o localStorage usado na página de cadastro.
+            ============================================================= */
+            try {
+
+                const usuarioSalvo = JSON.parse(
+                    localStorage.getItem("usuario") || "null"
+                );
+
+                if (usuarioSalvo && usuarioSalvo.nome) {
+
+                    const nome =
+                        String(usuarioSalvo.nome).trim();
+
+                    if (nome) {
+
+                        document.getElementById("profileName")
+                            .textContent = nome;
+
+                        document.getElementById("profileInitial")
+                            .textContent = primeiraLetra(nome);
+                    }
+                }
+
+            } catch (erro) {
+
+                console.warn(
+                    "Não foi possível ler o usuário salvo.",
+                    erro
+                );
+            }
+
+            /* =============================================================
+               18. PROTEÇÃO DE ACESSO
+               Descomente o bloco abaixo caso a Home seja acessível
+               somente depois do login:
+
+               const usuarioLogado =
+                   localStorage.getItem("usuarioLogado");
+
+               if (usuarioLogado !== "true") {
+                   window.location.href = "index_novo.html";
+               }
+            ============================================================= */
+
+            /* =============================================================
+               19. INICIALIZAÇÃO
+            ============================================================= */
+            atualizarCategoriasAtivas();
+            filtrar();
+
+        })();
+    </script>
+
+    <script src="menu-loader.js"></script>
+
+</body>
+
+</html>
