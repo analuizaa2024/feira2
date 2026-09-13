@@ -122,7 +122,7 @@
                     Conteúdos
                 </div>
 
-                <a class="menu-item" href="livros.html">
+                <a class="menu-item" href="biblioteca.html">
                     <span class="menu-icon">06</span>
 
                     <span class="menu-item-text">

@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre o Projeto | Elas Empreendedoras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           RESET
+        ========================================================= */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #fffaf3;
+            color: #51434a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* =========================================================
+           CORES
+        ========================================================= */
+        
+         :root {
+            --rosa: #d87598;
+            --rosa-claro: #f3a6c5;
+            --rosa-suave: #f8dce7;
+            --lilas: #ae89ba;
+            --lilas-claro: #e7ddea;
+            --creme: #fffaf3;
+            --branco: #ffffff;
+            --vinho: #633d4c;
+            --texto: #51434a;
+            --texto-suave: #7c6c73;
+            --borda: rgba(99, 61, 76, 0.10);
+            --sombra: 0 20px 50px rgba(99, 61, 76, 0.08);
+            --sombra-hover: 0 25px 60px rgba(99, 61, 76, 0.14);
+        }
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+        
+        header {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 250, 243, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(99, 61, 76, 0.08);
+        }
+        
+        .navbar {
+            max-width: 1250px;
+            margin: auto;
+            min-height: 82px;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        
+        .logo-area img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.05;
+        }
+        
+        .logo-text strong {
+            font-family: "DM Serif Display", serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--vinho);
+        }
+        
+        .logo-text span {
+            font-size: 10px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--rosa);
+            margin-top: 4px;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        nav a {
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--texto-suave);
+            transition: background .25s ease, color .25s ease, transform .25s ease;
+        }
+        
+        nav a:hover {
+            background: var(--rosa-suave);
+            color: var(--vinho);
+            transform: translateY(-1px);
+        }
+        
+        nav a.ativo {
+            background: var(--vinho);
+            color: white;
+        }
+        /* =========================================================
+           HERO
+        ========================================================= */
+        
+        .hero {
+            position: relative;
+            max-width: 1250px;
+            min-height: 670px;
+            margin: auto;
+            padding: 85px 30px 90px;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 70px;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 440px;
+            height: 440px;
+            top: -120px;
+            left: -180px;
+            background: rgba(243, 166, 197, .18);
+            border-radius: 50%;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -120px;
+            bottom: 20px;
+            background: rgba(174, 137, 186, .14);
+            border-radius: 50%;
+            filter: blur(6px);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 650px;
+        }
+        
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: var(--rosa-suave);
+            color: var(--vinho);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        
+        .tag::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: var(--rosa);
+            border-radius: 50%;
+        }
+        
+        .hero h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(55px, 6vw, 86px);
+            line-height: .98;
+            font-weight: 400;
+            letter-spacing: -.035em;
+            color: var(--vinho);
+            margin-bottom: 27px;
+        }
+        
+        .hero h1 em {
+            color: var(--rosa);
+        }
+        
+        .hero p {
+            max-width: 610px;
+            color: var(--texto-suave);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 34px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+        
+        .btn {
+            min-height: 49px;
+            padding: 0 20px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+        }
+        
+        .btn-primary {
+            background: var(--vinho);
+            color: white;
+            box-shadow: 0 10px 25px rgba(99, 61, 76, .16);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 17px 35px rgba(99, 61, 76, .20);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--vinho);
+            border: 1px solid var(--borda);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--sombra);
+            background: #fff;
+        }
+        /* =========================================================
+           HERO VISUAL
+        ========================================================= */
+        
+        .hero-visual {
+            position: relative;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .visual-main {
+            position: relative;
+            width: min(420px, 100%);
+            aspect-ratio: 1 / 1;
+            background: linear-gradient( 145deg, #f9e5ed 0%, #f4d8e4 47%, #e9daeb 100%);
+            border-radius: 42% 58% 60% 40% / 44% 42% 58% 56%;
+            box-shadow: var(--sombra);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .visual-main::before {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .7);
+        }
+        
+        .visual-main::after {
+            content: "";
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .45);
+        }
+        
+        .visual-center {
+            position: relative;
+            z-index: 2;
+            width: 190px;
+            height: 190px;
+            border-radius: 32px;
+            background: rgba(255, 255, 255, .72);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, .8);
+            box-shadow: 0 25px 50px rgba(99, 61, 76, .10);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .visual-center .number {
+            font-family: "DM Serif Display", serif;
+            font-size: 64px;
+            line-height: 1;
+            color: var(--rosa);
+        }
+        
+        .visual-center span {
+            max-width: 130px;
+            margin-top: 8px;
+            font-size: 12px;
+            line-height: 1.5;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--vinho);
+        }
+        
+        .floating-card {
+            position: absolute;
+            padding: 15px 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .93);
+            border: 1px solid rgba(255, 255, 255, .8);
+            box-shadow: 0 18px 40px rgba(99, 61, 76, .12);
+            backdrop-filter: blur(12px);
+            z-index: 5;
+        }
+        
+        .floating-card strong {
+            display: block;
+            font-family: "DM Serif Display", serif;
+            font-size: 21px;
+            color: var(--vinho);
+        }
+        
+        .floating-card span {
+            display: block;
+            margin-top: 3px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--texto-suave);
+        }
+        
+        .card-one {
+            top: 50px;
+            right: 10px;
+        }
+        
+        .card-two {
+            bottom: 70px;
+            left: 0;
+        }
+        /* =========================================================
+           BLOCO INTRODUTÓRIO
+        ========================================================= */
+        
+        .intro {
+            background: white;
+            border-top: 1px solid var(--borda);
+            border-bottom: 1px solid var(--borda);
+        }
+        
+        .intro-inner {
+            max-width: 1050px;
+            margin: auto;
+            padding: 80px 30px;
+            text-align: center;
+        }
+        
+        .section-label {
+            display: inline-block;
+            margin-bottom: 13px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            color: var(--rosa);
+        }
+        
+        .intro h2,
+        .section-title {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(37px, 4vw, 55px);
+            line-height: 1.05;
+            font-weight: 400;
+            letter-spacing: -.025em;
+            color: var(--vinho);
+        }
+        
+        .intro p {
+            max-width: 760px;
+            margin: 22px auto 0;
+            color: var(--texto-suave);
+            font-size: 16px;
+            line-height: 1.85;
+        }
+        /* =========================================================
+           SEÇÕES
+        ========================================================= */
+        
+        .section {
+            max-width: 1250px;
+            margin: auto;
+            padding: 100px 30px;
+        }
+        
+        .section-heading {
+            max-width: 730px;
+            margin-bottom: 48px;
+        }
+        
+        .section-heading p {
+            margin-top: 17px;
+            color: var(--texto-suave);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        /* =========================================================
+           CARDS
+        ========================================================= */
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        
+        .info-card {
+            position: relative;
+            padding: 29px;
+            min-height: 245px;
+            background: white;
+            border: 1px solid var(--borda);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(99, 61, 76, .04);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--sombra-hover);
+        }
+        
+        .card-icon {
+            width: 49px;
+            height: 49px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: var(--rosa-suave);
+            color: var(--vinho);
+            font-size: 20px;
+            margin-bottom: 22px;
+        }
+        
+        .info-card:nth-child(2) .card-icon {
+            background: var(--lilas-claro);
+        }
+        
+        .info-card:nth-child(3) .card-icon {
+            background: #f8e7cf;
+        }
+        
+        .info-card h3 {
+            font-family: "DM Serif Display", serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--vinho);
+            margin-bottom: 11px;
+        }
+        
+        .info-card p {
+            color: var(--texto-suave);
+            font-size: 14px;
+            line-height: 1.75;
+        }
+        /* =========================================================
+           ODS
+        ========================================================= */
+        
+        .ods-section {
+            background: linear-gradient( 135deg, #fff5f8 0%, #fffaf3 42%, #f7eff8 100%);
+            border-top: 1px solid var(--borda);
+            border-bottom: 1px solid var(--borda);
+        }
+        
+        .ods-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .ods-card {
+            position: relative;
+            min-height: 350px;
+            padding: 35px;
+            overflow: hidden;
+            border-radius: 30px;
+            color: white;
+            box-shadow: 0 20px 45px rgba(99, 61, 76, .10);
+        }
+        
+        .ods-5 {
+            background: linear-gradient( 145deg, #ca688c, #a95274);
+        }
+        
+        .ods-8 {
+            background: linear-gradient( 145deg, #9b78ac, #76578d);
+        }
+        
+        .ods-card::after {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            right: -75px;
+            bottom: -95px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .09);
+        }
+        
+        .ods-number {
+            font-family: "DM Serif Display", serif;
+            font-size: 88px;
+            line-height: .8;
+            opacity: .22;
+            margin-bottom: 24px;
+        }
+        
+        .ods-card h3 {
+            position: relative;
+            z-index: 2;
+            font-family: "DM Serif Display", serif;
+            font-weight: 400;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .ods-card p {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            color: rgba(255, 255, 255, .84);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .ods-tag {
+            display: inline-block;
+            margin-top: 26px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .20);
+            background: rgba(255, 255, 255, .09);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        /* =========================================================
+           CONEXÃO ODS
+        ========================================================= */
+        
+        .connection {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 55px;
+            align-items: center;
+        }
+        
+        .connection-visual {
+            position: relative;
+            min-height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .circle {
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+        }
+        
+        .circle-one {
+            background: rgba(216, 117, 152, .24);
+            transform: translateX(-65px);
+        }
+        
+        .circle-two {
+            background: rgba(174, 137, 186, .25);
+            transform: translateX(65px);
+        }
+        
+        .circle-center {
+            position: relative;
+            z-index: 4;
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            background: var(--vinho);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: "DM Serif Display", serif;
+            font-size: 23px;
+            line-height: 1.1;
+            box-shadow: 0 20px 35px rgba(99, 61, 76, .18);
+        }
+        
+        .connection-text h2 {
+            margin-bottom: 20px;
+        }
+        
+        .connection-text p {
+            margin-bottom: 20px;
+            color: var(--texto-suave);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+        
+        .highlight {
+            padding: 19px 20px;
+            border-left: 3px solid var(--rosa);
+            border-radius: 0 15px 15px 0;
+            background: #fff;
+            color: var(--vinho);
+            font-size: 14px;
+            font-weight: 700;
+        }
+        /* =========================================================
+           SOBRE O PROJETO
+        ========================================================= */
+        
+        .about-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            background: white;
+            border: 1px solid var(--borda);
+            border-radius: 30px;
+            box-shadow: var(--sombra);
+        }
+        
+        .about-content {
+            padding: 55px;
+        }
+        
+        .about-content h2 {
+            margin-bottom: 19px;
+        }
+        
+        .about-content p {
+            color: var(--texto-suave);
+            font-size: 15px;
+            line-height: 1.85;
+            margin-bottom: 15px;
+        }
+        
+        .about-list {
+            margin-top: 25px;
+            display: grid;
+            gap: 10px;
+        }
+        
+        .about-list div {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--vinho);
+            font-size: 13px;
+            font-weight: 700;
+        }
+        
+        .about-list span {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--rosa-suave);
+            color: var(--rosa);
+            font-size: 12px;
+        }
+        
+        .about-visual {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient( 145deg, #f6dce7, #ebe0ee);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-visual::before,
+        .about-visual::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .65);
+        }
+        
+        .about-visual::before {
+            width: 310px;
+            height: 310px;
+        }
+        
+        .about-visual::after {
+            width: 210px;
+            height: 210px;
+        }
+        
+        .quote {
+            position: relative;
+            z-index: 2;
+            max-width: 340px;
+            text-align: center;
+            font-family: "DM Serif Display", serif;
+            font-size: 34px;
+            line-height: 1.18;
+            color: var(--vinho);
+        }
+        
+        .quote small {
+            display: block;
+            margin-top: 20px;
+            font-family: "DM Sans", sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--rosa);
+        }
+        /* =========================================================
+           CTA
+        ========================================================= */
+        
+        .cta {
+            max-width: 1190px;
+            margin: 0 auto 100px;
+            padding: 60px 50px;
+            border-radius: 32px;
+            background: linear-gradient( 130deg, #f5d8e4, #eadced);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: var(--sombra);
+        }
+        
+        .cta::before {
+            content: "";
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            left: -130px;
+            bottom: -200px;
+            background: rgba(255, 255, 255, .35);
+            border-radius: 50%;
+        }
+        
+        .cta::after {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            right: -110px;
+            top: -150px;
+            background: rgba(255, 255, 255, .25);
+            border-radius: 50%;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1;
+            font-weight: 400;
+            color: var(--vinho);
+            margin-bottom: 17px;
+        }
+        
+        .cta p {
+            max-width: 650px;
+            margin: auto auto 28px;
+            color: var(--texto-suave);
+            font-size: 15px;
+        }
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+        
+        footer {
+            background: var(--vinho);
+            color: rgba(255, 255, 255, .75);
+        }
+        
+        .footer-inner {
+            max-width: 1250px;
+            margin: auto;
+            padding: 45px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .footer-brand img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+        
+        .footer-brand strong {
+            display: block;
+            font-family: "DM Serif Display", serif;
+            font-size: 19px;
+            font-weight: 400;
+            color: white;
+        }
+        
+        .footer-brand span {
+            display: block;
+            font-size: 10px;
+            margin-top: 2px;
+            letter-spacing: .08em;
+        }
+        
+        .footer-copy {
+            font-size: 11px;
+            text-align: right;
+            line-height: 1.7;
+        }
+        /* =========================================================
+           RESPONSIVIDADE
+        ========================================================= */
+        
+        @media (max-width: 1000px) {
+            nav {
+                display: none;
+            }
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 70px;
+            }
+            .hero-content {
+                margin: auto;
+            }
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-visual {
+                min-height: 400px;
+            }
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            .ods-grid {
+                grid-template-columns: 1fr;
+            }
+            .connection {
+                grid-template-columns: 1fr;
+            }
+            .connection-visual {
+                order: 2;
+            }
+            .about-box {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 650px) {
+            .navbar {
+                padding: 0 18px;
+                min-height: 72px;
+            }
+            .logo-area img {
+                width: 48px;
+                height: 48px;
+            }
+            .logo-text strong {
+                font-size: 18px;
+            }
+            .hero {
+                padding: 55px 20px 70px;
+                min-height: auto;
+            }
+            .hero h1 {
+                font-size: 50px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            .hero-visual {
+                min-height: 330px;
+            }
+            .visual-main {
+                width: 310px;
+            }
+            .visual-center {
+                width: 145px;
+                height: 145px;
+            }
+            .visual-center .number {
+                font-size: 48px;
+            }
+            .floating-card {
+                padding: 11px 13px;
+            }
+            .floating-card strong {
+                font-size: 17px;
+            }
+            .card-one {
+                right: -4px;
+                top: 25px;
+            }
+            .card-two {
+                left: -5px;
+                bottom: 30px;
+            }
+            .intro-inner,
+            .section {
+                padding: 70px 20px;
+            }
+            .section-title,
+            .intro h2 {
+                font-size: 39px;
+            }
+            .ods-card {
+                min-height: 300px;
+                padding: 28px;
+            }
+            .ods-number {
+                font-size: 70px;
+            }
+            .ods-card h3 {
+                font-size: 28px;
+            }
+            .connection-visual {
+                min-height: 280px;
+            }
+            .circle {
+                width: 210px;
+                height: 210px;
+            }
+            .circle-center {
+                width: 120px;
+                height: 120px;
+                font-size: 19px;
+            }
+            .about-content {
+                padding: 32px 25px;
+            }
+            .about-visual {
+                min-height: 330px;
+            }
+            .quote {
+                font-size: 28px;
+                padding: 20px;
+            }
+            .cta {
+                margin: 0 20px 70px;
+                padding: 45px 25px;
+            }
+            .cta h2 {
+                font-size: 40px;
+            }
+            .footer-inner {
+                padding: 35px 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-copy {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <header>
+
+        <div class="navbar">
+
+            <a href="Home.html" class="logo-area">
+
+                <img src="logo.png" alt="Logo Elas Empreendedoras">
+
+                <div class="logo-text">
+                    <strong>Elas Empreendedoras</strong>
+                    <span>Empoderar para empreender</span>
+                </div>
+
+            </a>
+
+            <nav>
+
+                <a href="Home.html">Início</a>
+
+                <a href="biblioteca.html">
+                    Biblioteca
+                </a>
+
+                <a href="meuprojeto.html">
+                    Meu projeto
+                </a>
+
+                <a href="projeto.html" class="ativo">
+                    Sobre o projeto
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="tag">
+                    Nosso propósito
+                </span>
+
+                <h1>
+                    Empreender também é
+                    <em>abrir caminhos.</em>
+                </h1>
+
+                <p>
+                    O Elas Empreendedoras nasceu para incentivar, valorizar e ampliar a presença feminina no empreendedorismo, mostrando que uma ideia pode se transformar em oportunidade, independência e transformação social.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projeto" class="btn btn-primary">
+                        Conheça o projeto
+                    </a>
+
+                    <a href="meuprojeto.html" class="btn btn-secondary">
+                        Começar meu projeto
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="visual-main">
+
+                    <div class="visual-center">
+
+                        <span class="number">♀</span>
+
+                        <span>
+                            Mulheres criando
+                            novas possibilidades
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="floating-card card-one">
+
+                    <strong>ODS 5</strong>
+
+                    <span>
+                        Igualdade de gênero
+                    </span>
+
+                </div>
+
+                <div class="floating-card card-two">
+
+                    <strong>ODS 8</strong>
+
+                    <span>
+                        Trabalho e crescimento
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRO
+        ===================================================== -->
+
+        <section class="intro" id="projeto">
+
+            <div class="intro-inner">
+
+                <span class="section-label">
+                    Sobre o projeto
+                </span>
+
+                <h2>
+                    Uma ideia criada para transformar inspiração em ação.
+                </h2>
+
+                <p>
+                    O Elas Empreendedoras é um espaço pensado para aproximar meninas e mulheres do universo do empreendedorismo. A proposta é oferecer informação, inspiração e ferramentas que possam ajudar cada pessoa a enxergar suas próprias capacidades e transformar ideias
+                    em projetos.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             POR QUE EMPREENDEDORISMO FEMININO
+        ===================================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Por que isso importa?
+                </span>
+
+                <h2 class="section-title">
+                    Empreendedorismo feminino é sobre muito mais que negócios.
+                </h2>
+
+                <p>
+                    Quando uma mulher empreende, ela não está apenas criando uma empresa. Ela pode estar conquistando autonomia, criando oportunidades e inspirando outras pessoas ao seu redor.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <article class="info-card">
+
+                    <div class="card-icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Autonomia
+                    </h3>
+
+                    <p>
+                        O empreendedorismo pode contribuir para a independência financeira e para a construção de novas possibilidades profissionais.
+                    </p>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="card-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Representatividade
+                    </h3>
+
+                    <p>
+                        A presença de mulheres à frente de projetos, empresas e iniciativas ajuda a ampliar a representatividade em diferentes espaços.
+                    </p>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="card-icon">
+                        ↗
+                    </div>
+
+                    <h3>
+                        Transformação
+                    </h3>
+
+                    <p>
+                        Novas ideias podem gerar oportunidades, movimentar a economia e produzir impactos positivos na sociedade.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ODS
+        ===================================================== -->
+
+        <section class="ods-section">
+
+            <div class="section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        Desenvolvimento sustentável
+                    </span>
+
+                    <h2 class="section-title">
+                        Nosso projeto também dialoga com os ODS.
+                    </h2>
+
+                    <p>
+                        O trabalho se relaciona especialmente com os Objetivos de Desenvolvimento Sustentável 5 e 8, que abordam igualdade de gênero, trabalho decente e crescimento econômico.
+                    </p>
+
+                </div>
+
+
+                <div class="ods-grid">
+
+                    <article class="ods-card ods-5">
+
+                        <div class="ods-number">
+                            05
+                        </div>
+
+                        <h3>
+                            Igualdade de Gênero
+                        </h3>
+
+                        <p>
+                            Promover a igualdade de gênero significa ampliar oportunidades, combater barreiras e fortalecer a participação das mulheres em diferentes áreas da sociedade.
+                        </p>
+
+                        <span class="ods-tag">
+                            ODS 5
+                        </span>
+
+                    </article>
+
+
+                    <article class="ods-card ods-8">
+
+                        <div class="ods-number">
+                            08
+                        </div>
+
+                        <h3>
+                            Trabalho Decente e Crescimento Econômico
+                        </h3>
+
+                        <p>
+                            O ODS 8 busca promover trabalho decente, oportunidades profissionais e crescimento econômico sustentável e inclusivo.
+                        </p>
+
+                        <span class="ods-tag">
+                            ODS 8
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONEXÃO
+        ===================================================== -->
+
+        <section class="section">
+
+            <div class="connection">
+
+                <div class="connection-visual">
+
+                    <div class="circle circle-one"></div>
+
+                    <div class="circle circle-two"></div>
+
+                    <div class="circle-center">
+                        Mulheres + oportunidades
+                    </div>
+
+                </div>
+
+
+                <div class="connection-text">
+
+                    <span class="section-label">
+                        A conexão
+                    </span>
+
+                    <h2 class="section-title">
+                        Igualdade também pode gerar crescimento.
+                    </h2>
+
+                    <p>
+                        Os ODS 5 e 8 se encontram em um ponto importante: ampliar o acesso das mulheres a oportunidades pode contribuir para uma sociedade mais justa e para uma economia mais inclusiva.
+                    </p>
+
+                    <p>
+                        Por isso, incentivar o empreendedorismo feminino significa também incentivar conhecimento, autonomia, participação econômica e novas possibilidades.
+                    </p>
+
+                    <div class="highlight">
+                        Mais oportunidades para mulheres significam mais possibilidades para a sociedade.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SOBRE A CRIAÇÃO
+        ===================================================== -->
+
+        <section class="section">
+
+            <div class="about-box">
+
+                <div class="about-content">
+
+                    <span class="section-label">
+                        Por que criamos este projeto?
+                    </span>
+
+                    <h2 class="section-title">
+                        Informação também pode ser uma oportunidade.
+                    </h2>
+
+                    <p>
+                        Criamos o Elas Empreendedoras para reunir conteúdos que possam aproximar o público feminino do empreendedorismo de forma acessível, visual e inspiradora.
+                    </p>
+
+                    <p>
+                        A ideia é mostrar referências, caminhos e possibilidades para que cada pessoa possa descobrir que também é capaz de criar, liderar e transformar ideias em realidade.
+                    </p>
+
+
+                    <div class="about-list">
+
+                        <div>
+                            <span>✓</span> Informação acessível
+                        </div>
+
+                        <div>
+                            <span>✓</span> Inspiração e representatividade
+                        </div>
+
+                        <div>
+                            <span>✓</span> Incentivo à criatividade
+                        </div>
+
+                        <div>
+                            <span>✓</span> Desenvolvimento de ideias
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-visual">
+
+                    <div class="quote">
+
+                        “Grandes mudanças começam com ideias que alguém decidiu acreditar.”
+
+                        <small>
+                            Elas Empreendedoras
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ===================================================== -->
+
+        <section class="cta">
+
+            <div class="cta-content">
+
+                <h2>
+                    Sua ideia pode começar agora.
+                </h2>
+
+                <p>
+                    Explore nossa biblioteca, conheça referências de empreendedorismo feminino e comece a pensar no seu próprio projeto.
+                </p>
+
+                <a href="meuprojeto.html" class="btn btn-primary">
+                    Criar meu projeto
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <img src="logo.png" alt="Logo">
+
+                <div>
+
+                    <strong>
+                        Elas Empreendedoras
+                    </strong>
+
+                    <span>
+                        Empoderar para empreender.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-copy">
+
+                Projeto desenvolvido para a Feira Tecnológica.
+                <br> Empreendedorismo feminino • ODS 5 • ODS 8
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

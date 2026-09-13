@@ -35,7 +35,7 @@
                 <button class="brand" id="brandButton" type="button" aria-label="Voltar ao início" title="Início">
                 <img
                     class="brand-logo"
-                    src="logomarca.png"
+                    src="logo.png"
                     alt="Elas Empreendedoras"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
                 >
@@ -79,6 +79,8 @@
                     <span class="profile-mark" aria-hidden="true"></span>
                 </button>
 
+
+
                     <!-- DROPDOWN PERFIL -->
                     <div class="profile-dropdown" id="profileDropdown">
 
@@ -101,9 +103,16 @@
                             <span class="dot"></span> Favoritos
                         </a>
 
-                        <a class="dropdown-link" href="livros.html">
+                        <a class="dropdown-link" href="biblioteca.html">
                             <span class="dot"></span> Biblioteca de livros
                         </a>
+
+
+                        <a class="dropdown-link" href="sobre.html">
+                            <span class="dot"></span> Sobre o projeto
+                        </a>
+
+
 
                         <div class="dropdown-divider"></div>
 
@@ -153,11 +162,7 @@
                             <button class="btn-primary" id="exploreButton" type="button">
                             Explorar empreendedoras
                         </button>
-
-                            <button class="btn-secondary" id="heroBooksButton" type="button">
-                            Acessar biblioteca
-                        </button>
-
+                            <a class="btn-secondary" href="meuprojeto.html">Criar meu projeto</a>
                         </div>
 
                         <div class="hero-meta">
@@ -166,6 +171,8 @@
                                 <strong>20+</strong>
                                 <span>perfis de referência</span>
                             </div>
+
+
 
                             <div class="hero-meta-item">
                                 <strong>10</strong>
@@ -696,6 +703,8 @@
                 ...document.querySelectorAll(".topic-card[data-topic]")
             ];
 
+
+
             const modalLayer = document.getElementById("modalLayer");
             const modalClose = document.getElementById("modalClose");
             const modalTitle = document.getElementById("modalTitle");
@@ -1001,8 +1010,8 @@
                         });
                 });
 
-            function abrirLivros() {
-                window.location.href = "livros.html";
+            function biblioteca() {
+                window.location.href = "biblioteca.html";
             }
 
             document
@@ -1139,6 +1148,12 @@
     </script>
 
     <script src="menu-loader.js"></script>
+
+</body>
+
+</html>cript>
+
+<script src="menu-loader.js"></script>
 
 </body>
 

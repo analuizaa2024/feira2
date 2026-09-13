@@ -698,14 +698,27 @@ a {
 }
 
 .btn-secondary {
+    min-height: 44px;
+    padding: 0 17px;
     border: 1px solid rgba(117, 91, 102, .22);
+    border-radius: 13px;
     background: white;
     color: var(--ink-700);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
 }
 
 .btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-xs);
+    box-shadow: 0 8px 24px rgba(75, 49, 61, .08);
 }
 
 .hero-meta {
