@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elas Empreendedoras | Lugares & Empresas do ABC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/locais.css">
+</head>
+
+<body>
+    <main class="page">
+        <header class="header">
+            <div class="brand">
+                <div class="brand-mark">E</div>
+                <div class="brand-text"><strong>Elas Empreendedoras</strong><span>Conhecimento que conecta</span></div>
+            </div>
+            <div class="header-center"><small>Conexões &amp; ideias</small>
+                <h1>Elas Empreendedoras</h1>
+            </div>
+            <button class="back" onclick="window.location.href='Home.html'">← <span>Voltar</span></button>
+        </header>
+
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="hero-kicker">Lugares + negócios</div>
+                <h2>Onde ideias <em>ganham espaço</em> para crescer.</h2>
+                <p class="hero-description">Conheça ambientes que aproximam pessoas e oportunidades e descubra empresas que movimentam o ABC Paulista. Informação, conexão e inspiração em um só lugar.</p>
+                <div class="hero-actions">
+                    <button class="hero-button" onclick="document.getElementById('lugares').scrollIntoView({behavior:'smooth'})">Explorar lugares <span>→</span></button>
+                    <button class="hero-button-light" onclick="document.getElementById('empresas').scrollIntoView({behavior:'smooth'})">Ver empresas <span>↘</span></button>
+                </div>
+            </div>
+            <aside class="hero-visual">
+                <div class="visual-label">Rede de possibilidades</div>
+                <div class="visual-center"><span class="big">∞</span><span>conexões geram caminhos</span></div>
+                <div class="idea one">Coworking</div>
+                <div class="idea two">Eventos</div>
+                <div class="idea three">Educação</div>
+                <div class="idea four">Inovação</div>
+            </aside>
+        </section>
+
+        <section class="section" id="lugares">
+            <div class="section-head">
+                <div>
+                    <div class="section-kicker">Espaços que aproximam</div>
+                    <h3>Onde novas possibilidades começam.</h3>
+                </div>
+                <p>Descubra diferentes ambientes que podem estimular conhecimento, networking, criatividade e desenvolvimento.</p>
+            </div>
+            <div class="grid-places">
+                <article class="place-card" data-title="Coworkings" data-subtitle="Networking" data-type="Lugares" data-description="Espaços de coworking permitem trabalhar próximo de profissionais de diferentes áreas, favorecendo networking, troca de experiências e possíveis parcerias."
+                    onclick="abrir(this)">
+                    <div class="card-top">
+                        <div class="place-icon">⌂</div><span class="card-number">01</span></div>
+                    <h4>Coworkings</h4>
+                    <p class="card-description">Ambientes compartilhados para trabalhar, conhecer pessoas e transformar contatos em novas possibilidades.</p>
+                    <div class="card-footer"><span class="tag">Networking</span><span class="open">↗</span></div>
+                </article>
+                <article class="place-card" data-title="Eventos e feiras" data-subtitle="Conexões" data-type="Lugares" data-description="Feiras, encontros e eventos de negócios podem aproximar empreendedoras de clientes, fornecedores, investidores e outras pessoas interessadas em inovação."
+                    onclick="abrir(this)">
+                    <div class="card-top">
+                        <div class="place-icon">✦</div><span class="card-number">02</span></div>
+                    <h4>Eventos e feiras</h4>
+                    <p class="card-description">Encontros para apresentar ideias, descobrir oportunidades e criar novas conexões.</p>
+                    <div class="card-footer"><span class="tag">Conexões</span><span class="open">↗</span></div>
+                </article>
+                <article class="place-card" data-title="Universidades e escolas" data-subtitle="Educação" data-type="Lugares" data-description="Instituições de ensino podem funcionar como ambientes de desenvolvimento de ideias, projetos, pesquisas e novos negócios."
+                    onclick="abrir(this)">
+                    <div class="card-top">
+                        <div class="place-icon">⌘</div><span class="card-number">03</span></div>
+                    <h4>Universidades</h4>
+                    <p class="card-description">Conhecimento, projetos e pesquisas podem criar caminhos para desenvolver novas ideias e negócios.</p>
+                    <div class="card-footer"><span class="tag">Educação</span><span class="open">↗</span></div>
+                </article>
+                <article class="place-card" data-title="Espaços de inovação" data-subtitle="Inovação" data-type="Lugares" data-description="Parques tecnológicos, incubadoras e hubs de inovação aproximam empreendedores de conhecimento, tecnologia, mentorias e oportunidades."
+                    onclick="abrir(this)">
+                    <div class="card-top">
+                        <div class="place-icon">◇</div><span class="card-number">04</span></div>
+                    <h4>Espaços de inovação</h4>
+                    <p class="card-description">Ambientes voltados para tecnologia, criatividade, mentorias e criação de novos negócios.</p>
+                    <div class="card-footer"><span class="tag">Inovação</span><span class="open">↗</span></div>
+                </article>
+            </div>
+        </section>
+
+        <div class="divider">Do espaço para o território</div>
+
+        <section class="abc-section" id="empresas">
+            <div class="abc-head">
+                <div>
+                    <div class="eyebrow">ABC Paulista</div>
+                    <h3>Quem está <em style="color:var(--pink);font-style:normal">movendo</em> a região.</h3>
+                </div>
+                <p>O ABC Paulista reúne empresas, negócios locais, espaços de inovação e iniciativas que ajudam a transformar a economia da região.</p>
+            </div>
+            <div class="abc-visual">
+                <div class="map-title">Região do ABC</div>
+                <div class="map-shape"></div>
+                <div class="map-label"><strong>ABC</strong><span>Polo empresarial</span></div>
+                <div class="city santo-andre">Santo André</div>
+                <div class="city sao-bernardo">São Bernardo</div>
+                <div class="city sao-caetano">São Caetano</div>
+                <div class="city diadema">Diadema</div>
+                <div class="city maua">Mauá</div>
+                <div class="city ribeirao">Ribeirão Pires</div>
+            </div>
+            <div class="filters"><button class="filter active" onclick="filtrar('Todos',this)">Todos</button><button class="filter" onclick="filtrar('Indústria',this)">Indústria</button><button class="filter" onclick="filtrar('Comércio',this)">Comércio</button><button class="filter"
+                    onclick="filtrar('Inovação',this)">Inovação</button><button class="filter" onclick="filtrar('Serviços',this)">Serviços</button></div>
+            <div class="grid-companies">
+                <article class="company-card" data-category="Serviços" data-title="Coop" data-subtitle="São Bernardo do Campo" data-type="Serviços" data-description="A Coop é uma rede varejista tradicional do ABC Paulista, com atuação em supermercados, drogarias e outros serviços."
+                    onclick="abrir(this)"><span class="card-number">01</span>
+                    <div class="company-icon">C</div>
+                    <h4>Coop</h4>
+                    <div class="city-name">São Bernardo do Campo</div>
+                    <p class="card-description">Rede varejista tradicional, presente no cotidiano de diferentes comunidades da região.</p>
+                    <div class="card-footer"><span class="tag">Serviços</span><span class="arrow">↗</span></div>
+                </article>
+                <article class="company-card" data-category="Indústria" data-title="Termomecanica" data-subtitle="São Bernardo do Campo" data-type="Indústria" data-description="A Termomecanica é uma empresa industrial tradicional de São Bernardo do Campo, conhecida por sua atuação no setor metalúrgico."
+                    onclick="abrir(this)"><span class="card-number">02</span>
+                    <div class="company-icon">T</div>
+                    <h4>Termomecanica</h4>
+                    <div class="city-name">São Bernardo do Campo</div>
+                    <p class="card-description">Uma referência industrial ligada à tradição metalúrgica da região.</p>
+                    <div class="card-footer"><span class="tag">Indústria</span><span class="arrow">↗</span></div>
+                </article>
+                <article class="company-card" data-category="Indústria" data-title="Scania" data-subtitle="São Bernardo do Campo" data-type="Indústria" data-description="A Scania possui uma importante operação industrial em São Bernardo do Campo e integra o cenário empresarial da região."
+                    onclick="abrir(this)"><span class="card-number">03</span>
+                    <div class="company-icon">S</div>
+                    <h4>Scania</h4>
+                    <div class="city-name">São Bernardo do Campo</div>
+                    <p class="card-description">Uma presença industrial de grande relevância dentro do cenário empresarial do ABC.</p>
+                    <div class="card-footer"><span class="tag">Indústria</span><span class="arrow">↗</span></div>
+                </article>
+                <article class="company-card" data-category="Comércio" data-title="Mauá Plaza Shopping" data-subtitle="Mauá" data-type="Comércio" data-description="O Mauá Plaza Shopping integra o comércio da região e reúne diferentes empresas e empreendedores em um espaço de consumo e negócios."
+                    onclick="abrir(this)"><span class="card-number">04</span>
+                    <div class="company-icon">M</div>
+                    <h4>Mauá Plaza</h4>
+                    <div class="city-name">Mauá</div>
+                    <p class="card-description">Um dos espaços que movimentam o comércio e o consumo na cidade de Mauá.</p>
+                    <div class="card-footer"><span class="tag">Comércio</span><span class="arrow">↗</span></div>
+                </article>
+                <article class="company-card" data-category="Comércio" data-title="Grand Plaza Shopping" data-subtitle="Santo André" data-type="Comércio" data-description="O Grand Plaza Shopping é um importante centro comercial de Santo André e reúne diversas marcas e operações empresariais."
+                    onclick="abrir(this)"><span class="card-number">05</span>
+                    <div class="company-icon">G</div>
+                    <h4>Grand Plaza</h4>
+                    <div class="city-name">Santo André</div>
+                    <p class="card-description">Um centro comercial que reúne marcas, serviços e diferentes operações empresariais.</p>
+                    <div class="card-footer"><span class="tag">Comércio</span><span class="arrow">↗</span></div>
+                </article>
+                <article class="company-card" data-category="Inovação" data-title="Parque Tecnológico de Santo André" data-subtitle="Santo André" data-type="Inovação" data-description="O Parque Tecnológico de Santo André integra iniciativas relacionadas a inovação, tecnologia, empreendedorismo e desenvolvimento econômico."
+                    onclick="abrir(this)"><span class="card-number">06</span>
+                    <div class="company-icon">P</div>
+                    <h4>Parque Tecnológico</h4>
+                    <div class="city-name">Santo André</div>
+                    <p class="card-description">Um espaço ligado à inovação, tecnologia e desenvolvimento econômico regional.</p>
+                    <div class="card-footer"><span class="tag">Inovação</span><span class="arrow">↗</span></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="final">
+            <div><small>Identidade regional</small>
+                <h5>Empreender também é criar território.</h5>
+            </div>
+            <p>O desenvolvimento acontece quando espaços, empresas, pessoas, ideias e oportunidades se encontram.</p>
+        </section>
+    </main>
+
+    <div class="overlay" id="overlay" onclick="if(event.target===this)fechar()">
+        <div class="modal"><button class="close" onclick="fechar()">×</button>
+            <div class="modal-line"></div>
+            <h2 id="modalTitle"></h2><small id="modalSubtitle"></small><span class="modal-type" id="modalType"></span>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script src="javascript/locais.js"> </script>
+</body>
+
+</html>

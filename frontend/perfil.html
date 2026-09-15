@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu perfil — Elas Empreendedoras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="header">
+
+            <div class="topbar">
+
+                <div class="logo" onclick="goHome()" title="Voltar para o início">
+
+                    <img src="logomarca.png" alt="Elas Empreendedoras" onerror="this.style.display='none'">
+
+                </div>
+
+                <div class="search">
+
+                    <span class="search-icon"></span>
+
+                    <input id="searchInput" type="search" placeholder="Pesquisar no seu espaço...">
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button class="circle-btn menu-button" id="menuButton" type="button" aria-label="Abrir menu">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </button>
+
+                    <button class="circle-btn" id="profileButton" type="button" aria-label="Perfil">
+
+                        <span class="profile-icon"></span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="content">
+
+            <div class="crumb">
+                Meu espaço • Perfil
+            </div>
+
+            <div class="layout">
+
+                <div class="main-col">
+
+                    <div class="hero">
+
+                        <article class="hero-card">
+
+                            <div class="eyebrow">
+                                Seu painel pessoal
+                            </div>
+
+                            <h1>
+                                Seu espaço para transformar ideias em
+                                <em>projetos.</em>
+                            </h1>
+
+                            <p class="hero-copy">
+                                Aqui ficam reunidas suas informações, seus projetos de empreendedorismo e os próximos passos. Salve uma ideia hoje e volte depois para continuar construindo.
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn primary" id="newProjectBtn">
+                                    + Criar meu projeto
+                                </button>
+
+                                <button class="btn secondary" id="editProfileBtn">
+                                    Editar perfil
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <aside class="stats-card">
+
+                            <h2>Visão geral</h2>
+
+                            <div class="mini-stats">
+
+                                <div class="mini-stat">
+                                    <strong id="projectCount">0</strong>
+                                    <span>Projetos salvos</span>
+                                </div>
+
+                                <div class="mini-stat">
+                                    <strong id="activeCount">0</strong>
+                                    <span>Em andamento</span>
+                                </div>
+
+                                <div class="mini-stat">
+                                    <strong id="ideaCount">0</strong>
+                                    <span>Ideias</span>
+                                </div>
+
+                                <div class="mini-stat">
+                                    <strong id="completedCount">0</strong>
+                                    <span>Concluídos</span>
+                                </div>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+
+                    <section class="panel profile-panel">
+
+                        <div class="profile-head">
+
+                            <div class="avatar" id="avatar">
+                                <span id="avatarLetter">E</span>
+                            </div>
+
+                            <div>
+
+                                <div class="profile-title" id="profileName">
+                                    Elas Empreendedoras
+                                </div>
+
+                                <div class="username" id="profileUsername">
+                                    @elasempreendedoras
+                                </div>
+
+                                <span class="category" id="profileCategory">
+                                    Empreendedorismo feminino
+                                </span>
+
+                                <p class="bio" id="profileBio">
+                                    Organizando ideias, aprendizados e projetos para transformar inspiração em possibilidade.
+                                </p>
+
+                            </div>
+
+                            <div class="profile-actions">
+
+                                <button class="small-btn edit" id="editProfileBtn2">
+                                    Editar
+                                </button>
+
+                                <button class="small-btn neutral" id="shareProfileBtn">
+                                    Compartilhar
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-meta">
+
+                            <div class="meta-box">
+                                <strong id="metaProjects">0</strong>
+                                <span>Projetos</span>
+                            </div>
+
+                            <div class="meta-box">
+                                <strong id="metaGoals">1</strong>
+                                <span>Meta atual</span>
+                            </div>
+
+                            <div class="meta-box">
+                                <strong id="metaIdeas">0</strong>
+                                <span>Ideias</span>
+                            </div>
+
+                            <div class="meta-box">
+                                <strong id="metaProgress">0%</strong>
+                                <span>Progresso geral</span>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <nav class="tabs">
+
+                        <button class="tab active" data-tab="projects">
+                            Meus projetos
+                        </button>
+
+                        <button class="tab" data-tab="activity">
+                            Atividade
+                        </button>
+
+                        <button class="tab" data-tab="about">
+                            Sobre mim
+                        </button>
+
+                    </nav>
+
+
+                    <section class="tab-content active" id="projects">
+
+                        <div class="panel">
+
+                            <div class="section-row">
+
+                                <div>
+
+                                    <h2 class="section-title">
+                                        Meus projetos
+                                    </h2>
+
+                                    <p class="section-sub">
+                                        Tudo que você criar fica salvo aqui neste dispositivo.
+                                    </p>
+
+                                </div>
+
+                                <button class="btn primary" id="emptyCreateBtn">
+                                    Novo projeto
+                                </button>
+
+                            </div>
+
+                            <div id="projectsGrid" class="projects-grid">
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <section class="tab-content" id="activity">
+
+                        <div class="panel">
+
+                            <div class="section-row">
+
+                                <div>
+
+                                    <h2 class="section-title">
+                                        Sua atividade
+                                    </h2>
+
+                                    <p class="section-sub">
+                                        Acompanhe as últimas ações feitas no seu espaço.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="activity-list" id="activityList">
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <section class="tab-content" id="about">
+
+                        <div class="about-grid">
+
+                            <article class="about-card">
+
+                                <h3>Sobre mim</h3>
+
+                                <p id="aboutText">
+                                    Use a edição do perfil para contar um pouco sobre você, seus interesses e o que deseja construir.
+                                </p>
+
+                            </article>
+
+
+                            <article class="about-card">
+
+                                <h3>Informações</h3>
+
+                                <ul class="info-list">
+
+                                    <li>
+                                        ✦
+                                        <span id="aboutArea">
+                                            Empreendedorismo feminino
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        ⌁
+                                        <span id="aboutLocation">
+                                            Local não informado
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        ◎
+                                        <span id="aboutHandle">
+                                            @elasempreendedoras
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        ◷
+                                        <span id="aboutMember">
+                                            Membro desde 2026
+                                        </span>
+                                    </li>
+
+                                </ul>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <aside class="side-col">
+
+                    <section class="side-card">
+
+                        <div class="side-title">
+
+                            <h3>Próximo passo</h3>
+
+                            <span class="side-link" id="resetGoal">
+                                Resetar
+                            </span>
+
+                        </div>
+
+                        <div class="goal-box">
+
+                            <div class="goal-label">
+                                Meta atual
+                            </div>
+
+                            <div class="goal-title" id="goalTitle">
+                                Estruturar meu primeiro projeto
+                            </div>
+
+                            <div class="goal-progress">
+                                <span id="goalBar"></span>
+                            </div>
+
+                            <div class="goal-row">
+
+                                <span id="goalText">
+                                    0 de 4 etapas
+                                </span>
+
+                                <span id="goalPercent">
+                                    0%
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="checklist">
+
+                            <label class="check">
+                                <input
+                                    type="checkbox"
+                                    data-goal="1">
+                                <span>Definir a ideia</span>
+                            </label>
+
+                            <label class="check">
+                                <input
+                                    type="checkbox"
+                                    data-goal="2">
+                                <span>Definir público e problema</span>
+                            </label>
+
+                            <label class="check">
+                                <input
+                                    type="checkbox"
+                                    data-goal="3">
+                                <span>Registrar a solução</span>
+                            </label>
+
+                            <label class="check">
+                                <input
+                                    type="checkbox"
+                                    data-goal="4">
+                                <span>Salvar o projeto</span>
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                    <section class="side-card">
+
+                        <div class="side-title">
+                            <h3>Ações rápidas</h3>
+                        </div>
+
+                        <div class="quick-grid">
+
+                            <button class="quick" id="quickProject">
+
+                                <b>Novo projeto</b>
+
+                                <span>
+                                    Transforme uma ideia em ficha.
+                                </span>
+
+                            </button>
+
+
+                            <button class="quick" id="quickProfile">
+
+                                <b>Editar perfil</b>
+
+                                <span>
+                                    Atualize nome, bio e área.
+                                </span>
+
+                            </button>
+
+
+                            <button class="quick" id="quickHome">
+
+                                <b>Explorar</b>
+
+                                <span>
+                                    Volte para a página inicial.
+                                </span>
+
+                            </button>
+
+
+                            <button class="quick" id="quickScroll">
+
+                                <b>Ver projetos</b>
+
+                                <span>
+                                    Ir direto para seus projetos.
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+                    <section class="side-card">
+
+                        <div class="side-title">
+
+                            <h3>Projetos recentes</h3>
+
+                            <span class="side-link" id="seeAll">
+                                Ver todos
+                            </span>
+
+                        </div>
+
+                        <div id="recentProjects" class="right-projects">
+                        </div>
+
+                    </section>
+
+
+                    <section class="side-card tips">
+
+                        <div class="side-title">
+                            <h3>Ideia do dia</h3>
+                        </div>
+
+                        <p id="dailyTip"></p>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         MODAL PERFIL
+         ========================================================= -->
+
+    <div class="modal" id="profileModal">
+
+        <div class="modal-box">
+
+            <div class="modal-head">
+
+                <h2>Editar meu perfil</h2>
+
+                <button class="close" id="closeProfile">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="field-grid">
+
+                <div class="field">
+
+                    <label>Nome</label>
+
+                    <input id="editName" maxlength="60">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Usuário</label>
+
+                    <input id="editUsername" maxlength="40" placeholder="@seunome">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Área</label>
+
+                    <input id="editCategory" maxlength="60">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Local</label>
+
+                    <input id="editLocation" maxlength="60">
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label>Biografia</label>
+
+                    <textarea id="editBio" maxlength="260"></textarea>
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label>Sobre mim</label>
+
+                    <textarea id="editAbout" maxlength="500"></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button class="btn secondary" id="cancelProfile">
+                    Cancelar
+                </button>
+
+                <button class="btn primary" id="saveProfile">
+                    Salvar alterações
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         MODAL PROJETO
+         ========================================================= -->
+
+    <div class="modal" id="projectModal">
+
+        <div class="modal-box">
+
+            <div class="modal-head">
+
+                <h2 id="projectModalTitle">
+                    Detalhes do projeto
+                </h2>
+
+                <button class="close" id="closeProject">
+                    ×
+                </button>
+
+            </div>
+
+            <div id="projectModalContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="toast" id="toast">
+        Pronto!
+    </div>
+
+    <div id="sharedMenu"></div>
+
+
+    <!-- MENU COMPARTILHADO -->
+    <script src="javascript/menu-loader.js"></script>
+
+
+    <!-- =========================================================
+         JAVASCRIPT DA PÁGINA
+         ========================================================= -->
+
+    <script src="javascript/perfil.js"></script>
+
+</body>
+
+</html>

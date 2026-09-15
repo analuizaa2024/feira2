@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mulheres Em Rede | Elas Em Rede</title>
+
+    <!-- =========================================================
+         FONTES
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/mulheres.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+    <main class="page">
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="header">
+
+
+            <div class="brand-area">
+
+                <div class="brand-mark">
+                    E
+                </div>
+
+
+                <div class="brand-copy">
+
+                    <strong>
+                        Elas Em Rede
+                    </strong>
+
+                    <span>
+                        Histórias que inspiram
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-title">
+
+                <small>
+                    Nossa principal inspiração
+                </small>
+
+                <h1>
+                    Mulheres Em Rede
+                </h1>
+
+            </div>
+
+
+            <div class="header-action">
+
+                <button class="back" onclick="window.location.href='Home.html'">
+                    ←
+                    Voltar
+                </button>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+
+            <div class="hero-text">
+
+
+                <div class="eyebrow">
+                    Elas que fazem acontecer
+                </div>
+
+
+                <h2 class="hero-title">
+                    Histórias que
+                    <em>transformam</em> ideias em realidade.
+                </h2>
+
+
+                <p class="hero-description">
+
+                    Conheça mulheres que construíram suas próprias trajetórias, enfrentaram desafios e transformaram ideias em projetos, negócios e oportunidades.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+
+                    <button class="primary-btn" onclick="document.getElementById('perfis').scrollIntoView({ behavior: 'smooth' })">
+                        Conhecer histórias
+                        →
+                    </button>
+
+
+                    <button class="secondary-btn" onclick="window.location.href='Home.html'">
+                        Explorar plataforma
+                    </button>
+
+
+                </div>
+
+
+
+                <div class="hero-stats">
+
+
+                    <div class="stat">
+
+                        <strong>
+                            06
+                        </strong>
+
+                        <span>
+                            histórias
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            05
+                        </strong>
+
+                        <span>
+                            áreas diferentes
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            01
+                        </strong>
+
+                        <span>
+                            propósito
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 VISUAL
+            ================================================== -->
+
+            <aside class="hero-visual">
+
+
+                <div class="visual-heading">
+                    Mulheres que deixam marcas
+                </div>
+
+
+                <div class="visual-orbit"></div>
+
+
+                <div class="visual-center">
+
+                    <div>
+
+                        <strong>
+                            ELAS
+                        </strong>
+
+                        <span>
+                            criam caminhos
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="orbit-word word-1">
+                    Coragem
+                </div>
+
+
+                <div class="orbit-word word-2">
+                    Liderança
+                </div>
+
+
+                <div class="orbit-word word-3">
+                    Criatividade
+                </div>
+
+
+                <div class="orbit-word word-4">
+                    Impacto
+                </div>
+
+
+            </aside>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PERFIS
+        ====================================================== -->
+
+        <section class="profiles" id="perfis">
+
+
+            <div class="profiles-heading">
+
+
+                <div>
+
+                    <div class="section-kicker">
+                        Em destaque
+                    </div>
+
+                    <h2>
+                        Mulheres que abriram caminhos.
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Diferentes áreas, diferentes trajetórias, mas um ponto em comum: transformar uma ideia em algo maior.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FILTROS
+            ================================================== -->
+
+            <div class="filters">
+
+
+                <button class="filter active" data-filter="Todos" onclick="filtrar('Todos', this)">
+                    Todas
+                </button>
+
+
+                <button class="filter" data-filter="Liderança" onclick="filtrar('Liderança', this)">
+                    Liderança
+                </button>
+
+
+                <button class="filter" data-filter="Beleza" onclick="filtrar('Beleza', this)">
+                    Beleza
+                </button>
+
+
+                <button class="filter" data-filter="Negócios" onclick="filtrar('Negócios', this)">
+                    Negócios
+                </button>
+
+
+                <button class="filter" data-filter="Inovação" onclick="filtrar('Inovação', this)">
+                    Inovação
+                </button>
+
+
+                <button class="filter" data-filter="Impacto" onclick="filtrar('Impacto', this)">
+                    Impacto
+                </button>
+
+
+                <button class="filter" data-filter="Empreendedorismo" onclick="filtrar('Empreendedorismo', this)">
+                    Empreendedorismo
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GRID
+            ================================================== -->
+
+            <div class="grid">
+
+
+
+                <!-- =================================================
+                     LUÍZA
+                ================================================== -->
+
+                <article class="card" data-category="Liderança" data-title="Luiza Helena Trajano" data-subtitle="Magazine Luiza • Liderança" data-description="Empresária brasileira conhecida por sua trajetória à frente do Magazine Luiza e por sua atuação em iniciativas voltadas ao empreendedorismo e à liderança feminina."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Liderança
+                        </span>
+
+
+                        <span class="card-number">
+                            01
+                        </span>
+
+
+                        <div class="initial">
+                            L
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Luiza Helena Trajano
+                        </h3>
+
+
+                        <p>
+                            Magazine Luiza
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Liderança
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     ZICA
+                ================================================== -->
+
+                <article class="card" data-category="Beleza" data-title="Zica Assis" data-subtitle="Beleza Natural • Beleza" data-description="Empreendedora brasileira e cofundadora do Instituto Beleza Natural, negócio criado a partir da experiência e necessidade de oferecer produtos voltados para cabelos crespos e cacheados."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Beleza
+                        </span>
+
+
+                        <span class="card-number">
+                            02
+                        </span>
+
+
+                        <div class="initial">
+                            Z
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Zica Assis
+                        </h3>
+
+
+                        <p>
+                            Beleza Natural
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Beleza
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     SÔNIA
+                ================================================== -->
+
+                <article class="card" data-category="Negócios" data-title="Sônia Hess" data-subtitle="Dudalina • Negócios" data-description="Empresária brasileira que participou da expansão da Dudalina e se tornou uma referência de gestão, liderança e empreendedorismo."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Negócios
+                        </span>
+
+
+                        <span class="card-number">
+                            03
+                        </span>
+
+
+                        <div class="initial">
+                            S
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Sônia Hess
+                        </h3>
+
+
+                        <p>
+                            Dudalina
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Negócios
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CAMILA
+                ================================================== -->
+
+                <article class="card" data-category="Inovação" data-title="Camila Farani" data-subtitle="Investimentos • Inovação" data-description="Empreendedora e investidora brasileira conhecida por sua atuação no ecossistema de startups e por incentivar novos negócios."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Inovação
+                        </span>
+
+
+                        <span class="card-number">
+                            04
+                        </span>
+
+
+                        <div class="initial">
+                            C
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Camila Farani
+                        </h3>
+
+
+                        <p>
+                            Investimentos
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Inovação
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MONIQUE
+                ================================================== -->
+
+                <article class="card" data-category="Impacto" data-title="Monique Evelle" data-subtitle="Inovação social • Impacto" data-description="Empreendedora e comunicadora brasileira que atua com inovação, negócios e iniciativas de impacto social." onclick="abrir(this)"
+                    tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Impacto
+                        </span>
+
+
+                        <span class="card-number">
+                            05
+                        </span>
+
+
+                        <div class="initial">
+                            M
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Monique Evelle
+                        </h3>
+
+
+                        <p>
+                            Inovação social
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Impacto
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     ANA
+                ================================================== -->
+
+                <article class="card" data-category="Empreendedorismo" data-title="Ana Fontes" data-subtitle="Rede Mulher Empreendedora • Empreendedorismo" data-description="Empreendedora social e fundadora da Rede Mulher Empreendedora, iniciativa voltada ao desenvolvimento e fortalecimento de mulheres empreendedoras."
+                    onclick="abrir(this)" tabindex="0" role="button">
+
+
+                    <div class="card-image">
+
+
+                        <span class="card-label">
+                            Empreendedorismo
+                        </span>
+
+
+                        <span class="card-number">
+                            06
+                        </span>
+
+
+                        <div class="initial">
+                            A
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Ana Fontes
+                        </h3>
+
+
+                        <p>
+                            Rede Mulher Empreendedora
+                        </p>
+
+
+                        <div class="card-bottom">
+
+
+                            <span class="tag">
+                                Empreendedorismo
+                            </span>
+
+
+                            <span class="open-card">
+                                ↗
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL
+        ====================================================== -->
+
+        <section class="final">
+
+
+            <div>
+
+                <small>
+                    O que fica dessa jornada
+                </small>
+
+
+                <h4>
+                    Uma história pode despertar a próxima.
+                </h4>
+
+            </div>
+
+
+            <p>
+
+                Conhecer diferentes trajetórias é também encontrar inspiração para enxergar novas possibilidades e caminhos.
+
+            </p>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         MODAL
+    ========================================================== -->
+
+    <div class="overlay" id="overlay">
+
+
+        <div class="modal">
+
+
+            <button class="close" onclick="fechar()" aria-label="Fechar">
+                ×
+            </button>
+
+
+            <div class="modal-line"></div>
+
+
+            <h2 id="modalTitle"></h2>
+
+
+            <div class="modal-subtitle" id="modalSubtitle"></div>
+
+
+            <p id="modalDescription"></p>
+
+
+            <div class="modal-tip">
+                Clique fora da janela ou pressione ESC para fechar.
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="javascript/mulheres.js"></script>
+
+
+</body>
+
+</html>

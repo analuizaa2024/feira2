@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Palestrantes | Elas Empreendedoras</title>
+
+
+    <!-- =========================================================
+         FONTES
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="stylesheet" href="css/palestrantes.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+   
+
+</head>
+
+
+<body>
+
+
+    <main class="page">
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="header">
+
+
+            <div class="brand">
+
+                <div class="brand-mark">
+                    E
+                </div>
+
+
+                <div class="brand-copy">
+
+                    <strong>
+                        Elas Empreendedoras
+                    </strong>
+
+                    <span>
+                        Conhecimento que inspira
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-title">
+
+                <small>
+                    Vozes que inspiram
+                </small>
+
+                <h1>
+                    Elas em Rede
+                </h1>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button class="back" onclick="window.location.href='Home.html'">
+
+                    ←
+
+                    <span>
+                        Voltar
+                    </span>
+
+                </button>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+
+            <div class="hero-main">
+
+
+                <div class="eyebrow">
+                    Conhecimento em movimento
+                </div>
+
+
+                <h2 class="hero-title">
+
+                    Vozes que
+                    <em>
+                        inspiram
+                    </em> novas possibilidades.
+
+                </h2>
+
+
+                <p class="hero-description">
+
+                    Palestras, histórias e experiências podem ajudar outras mulheres a enxergar novos caminhos, desenvolver ideias e transformar conhecimento em ação.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+
+                    <button class="hero-button" onclick="document.getElementById('palestrantes').scrollIntoView({behavior:'smooth'})">
+
+                        Conhecer palestrantes
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <button class="hero-secondary" onclick="window.location.href='Home.html'">
+
+                        Explorar plataforma
+
+                    </button>
+
+
+                </div>
+
+
+
+                <div class="stats">
+
+
+                    <div class="stat">
+
+                        <strong>
+                            04
+                        </strong>
+
+                        <span>
+                            palestrantes
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            04
+                        </strong>
+
+                        <span>
+                            áreas de atuação
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            01
+                        </strong>
+
+                        <span>
+                            propósito
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 VISUAL
+            ================================================== -->
+
+            <aside class="hero-art">
+
+
+                <div class="art-label">
+                    Conhecimento compartilhado
+                </div>
+
+
+                <div class="microphone">
+
+                    <div class="microphone-inner">
+                        ♫
+                    </div>
+
+                </div>
+
+
+                <div class="sound one">
+                    •
+                </div>
+
+
+                <div class="sound two">
+                    •
+                </div>
+
+
+                <div class="sound three">
+                    •
+                </div>
+
+
+                <div class="sound four">
+                    •
+                </div>
+
+
+                <div class="art-caption">
+
+                    Ideias crescem quando são compartilhadas, discutidas e transformadas em novas possibilidades.
+
+                </div>
+
+
+            </aside>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PALESTRANTES
+        ====================================================== -->
+
+        <section class="speakers" id="palestrantes">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <div class="section-kicker">
+                        Conheça as referências
+                    </div>
+
+                    <h2>
+                        Mulheres que compartilham caminhos.
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Diferentes experiências e áreas de atuação reunidas para inspirar novas ideias, decisões e possibilidades.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FILTROS
+            ================================================== -->
+
+            <div class="filters">
+
+
+                <button class="filter active" onclick="filtrar('Todos', this)">
+                    Todas
+                </button>
+
+
+                <button class="filter" onclick="filtrar('Liderança', this)">
+                    Liderança
+                </button>
+
+
+                <button class="filter" onclick="filtrar('Negócios', this)">
+                    Negócios
+                </button>
+
+
+                <button class="filter" onclick="filtrar('Inovação', this)">
+                    Inovação
+                </button>
+
+
+                <button class="filter" onclick="filtrar('Empreendedorismo', this)">
+                    Empreendedorismo
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GRID
+            ================================================== -->
+
+            <div class="grid">
+
+
+
+                <!-- =================================================
+                     ANA FONTES
+                ================================================== -->
+
+                <article class="card" data-category="Liderança" data-title="Ana Fontes" data-subtitle="Empreendedorismo feminino" data-description="Ana Fontes é empreendedora social e fundadora da Rede Mulher Empreendedora. Sua atuação envolve desenvolvimento, capacitação e fortalecimento de mulheres empreendedoras."
+                    onclick="abrir(this)" tabindex="0" role="button" aria-label="Conhecer Ana Fontes">
+
+
+                    <div class="portrait">
+
+
+                        <span class="speaker-area">
+                            Liderança
+                        </span>
+
+
+                        <span class="speaker-number">
+                            01
+                        </span>
+
+
+                        <div class="initial">
+                            A
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Ana Fontes
+                        </h3>
+
+
+                        <p>
+                            Empreendedorismo feminino
+                        </p>
+
+
+                        <div class="card-footer">
+
+                            <span class="area">
+                                Liderança
+                            </span>
+
+
+                            <span class="learn">
+                                Conhecer →
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CAMILA FARANI
+                ================================================== -->
+
+                <article class="card" data-category="Negócios" data-title="Camila Farani" data-subtitle="Investimentos e negócios" data-description="Camila Farani atua como empreendedora, investidora e mentora, participando de discussões sobre inovação, investimentos e desenvolvimento de negócios."
+                    onclick="abrir(this)" tabindex="0" role="button" aria-label="Conhecer Camila Farani">
+
+
+                    <div class="portrait">
+
+
+                        <span class="speaker-area">
+                            Negócios
+                        </span>
+
+
+                        <span class="speaker-number">
+                            02
+                        </span>
+
+
+                        <div class="initial">
+                            C
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Camila Farani
+                        </h3>
+
+
+                        <p>
+                            Investimentos e negócios
+                        </p>
+
+
+                        <div class="card-footer">
+
+                            <span class="area">
+                                Negócios
+                            </span>
+
+
+                            <span class="learn">
+                                Conhecer →
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     LUIZA HELENA
+                ================================================== -->
+
+                <article class="card" data-category="Liderança" data-title="Luiza Helena Trajano" data-subtitle="Liderança empresarial" data-description="Luiza Helena Trajano é uma empresária brasileira reconhecida por sua trajetória no Magazine Luiza e por sua participação em debates sobre liderança, empreendedorismo e desenvolvimento."
+                    onclick="abrir(this)" tabindex="0" role="button" aria-label="Conhecer Luiza Helena Trajano">
+
+
+                    <div class="portrait">
+
+
+                        <span class="speaker-area">
+                            Liderança
+                        </span>
+
+
+                        <span class="speaker-number">
+                            03
+                        </span>
+
+
+                        <div class="initial">
+                            L
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Luiza Helena Trajano
+                        </h3>
+
+
+                        <p>
+                            Liderança empresarial
+                        </p>
+
+
+                        <div class="card-footer">
+
+                            <span class="area">
+                                Liderança
+                            </span>
+
+
+                            <span class="learn">
+                                Conhecer →
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MONIQUE EVELLE
+                ================================================== -->
+
+                <article class="card" data-category="Inovação" data-title="Monique Evelle" data-subtitle="Inovação e impacto" data-description="Monique Evelle é empreendedora, comunicadora e atua com inovação, negócios e impacto social, compartilhando experiências sobre criatividade e transformação."
+                    onclick="abrir(this)" tabindex="0" role="button" aria-label="Conhecer Monique Evelle">
+
+
+                    <div class="portrait">
+
+
+                        <span class="speaker-area">
+                            Inovação
+                        </span>
+
+
+                        <span class="speaker-number">
+                            04
+                        </span>
+
+
+                        <div class="initial">
+                            M
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-info">
+
+
+                        <h3>
+                            Monique Evelle
+                        </h3>
+
+
+                        <p>
+                            Inovação e impacto
+                        </p>
+
+
+                        <div class="card-footer">
+
+                            <span class="area">
+                                Inovação
+                            </span>
+
+
+                            <span class="learn">
+                                Conhecer →
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL
+        ====================================================== -->
+
+        <section class="final">
+
+
+            <small>
+                Uma ideia compartilhada pode ir mais longe
+            </small>
+
+
+            <h4>
+                Conhecimento não termina em quem fala. Ele continua em quem escuta.
+            </h4>
+
+
+            <p>
+
+                Cada experiência pode despertar uma pergunta, uma decisão ou até mesmo uma nova ideia.
+
+            </p>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         MODAL
+    ========================================================== -->
+
+    <div class="overlay" id="overlay">
+
+
+        <div class="modal">
+
+
+            <button class="close" onclick="fechar()" aria-label="Fechar janela">
+                ×
+            </button>
+
+
+            <div class="modal-line"></div>
+
+
+            <h2 id="modalTitle"></h2>
+
+
+            <small id="modalSubtitle"></small>
+
+
+            <p id="modalDescription"></p>
+
+
+            <div class="modal-tip">
+
+                Clique fora da janela ou pressione ESC para fechar.
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="javascript/palestrantes.js"></script>
+
+
+</body>
+
+</html>
