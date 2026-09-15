@@ -9,7 +9,7 @@
                     <div class="menu-brand-mark">E</div>
 
                     <div>
-                        <strong>Elas Empreendedoras</strong>
+                        <strong>Elas Em Rede</strong>
                         <span>Central de navegação</span>
                     </div>
                 </div>
