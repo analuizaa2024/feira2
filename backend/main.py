@@ -7,12 +7,12 @@ from passlib.context import CryptContext
 import jwt
 from pymongo import MongoClient
 
-# Configuração do JWT (Segredo e Algoritmo)
+# Configuração do JWT (proteção de dados)
 SECRET_KEY = "sua_chave_secreta_super_segura_aqui"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-# Criptografia de senhas
+# Criptografia de senhas - proteje a senha
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/login")
 
@@ -21,11 +21,11 @@ MONGO_URL = "mongodb+srv://AnaLuiza:AnaLuiza@cluster0.elo3l5s.mongodb.net/?retry
 client = MongoClient(MONGO_URL)
 db = client["elas_em_rede_db"]  # Nome do banco de dados na nuvem
 
-# Coleções (equivalente às antigas tabelas)
+# Coleções (cria as coleções)
 usuarios_collection = db["usuarios"]
 empreendedoras_collection = db["empreendedoras"]
 
-# Inicializa o aplicativo FastAPI
+# Inicializa o aplicativo FastAPI - swwagger
 app = FastAPI(title="Elas em Rede API - MongoDB")
 
 # Configuração de CORS para o Frontend (Live Server na porta 5500)
@@ -51,6 +51,8 @@ def criar_token_acesso(data: dict):
 
 # --- ROTAS DA API ---
 
+
+ #--- essa rota serve para criar um novo usuario --
 @app.post("/api/cadastrar")
 def cadastrar_usuario(dados: dict):
     nome = dados.get("nome")
@@ -73,6 +75,8 @@ def cadastrar_usuario(dados: dict):
 
     return {"mensagem": "Usuária cadastrada com sucesso!"}
 
+
+#--- rota do login --------
 @app.post("/api/login")
 def login(dados: dict):
     print("DADOS RECEBIDOS:", dados)
@@ -110,7 +114,7 @@ def listar_usuarios():
         usuarios.append(usuario)
     return usuarios
 
-
+# ------ tem que arrumar ------
 # Rotas do Feed de Empreendedoras
 @app.get("/api/empreendedoras")
 def listar_empreendedoras():
