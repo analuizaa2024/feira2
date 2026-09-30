@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elas em rede | Cadastro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/logincadastro.css">
+</head>
+
+<body>
+    <main class="page">
+        <section class="card cadastro-card">
+            <a class="back-link" href="login.html" aria-label="Voltar para o login">←</a>
+            
+            <div class="cadastro-content">
+                <h1>Cadastro</h1>
+
+                <form id="cadastroForm">
+                    <label for="nome">Digite seu nome:</label>
+                    <input type="text" id="nome" required>
+
+                    <label for="telefone">Digite seu telefone:</label>
+                    <input type="tel" id="telefone" required>
+
+                    <label for="email-cadastro">Digite seu E-mail:</label>
+                    <input type="email" id="email-cadastro" required>
+
+                    <label for="senha-cadastro">Digite sua senha:</label>
+                    <input type="password" id="senha-cadastro" required>
+
+                    <!-- Alterado para type="submit" e removido o onclick para deixar a lógica no cadastro.js -->
+                    <button class="main-button" type="submit">CADASTRAR</button>
+                </form>
+            </div>
+
+            <div class="cadastro-arte">
+                <canvas id="florCanvas"></canvas>
+                <div class="frase">
+                    <h2>
+                        Pequenos passos
+                        <br> fazem grandes histórias.
+                    </h2>
+                    <p>Você está criando algo novo.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="javascript/cadastro.js"></script>
+    <script src="javascript/flor.js"></script>
+</body>
+
+</html>
