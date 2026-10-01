@@ -2,7 +2,7 @@
 from fastapi import APIRouter
 
 from app.database import empreendedoras_collection, serializar
-from feira2.backend.app.modelos import NegocioIn
+from app.modelos import NegocioIn
 
 router = APIRouter(prefix="/api/empreendedoras", tags=["Empreendedoras"])
 

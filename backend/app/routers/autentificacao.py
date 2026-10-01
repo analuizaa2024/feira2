@@ -2,8 +2,8 @@
 from fastapi import APIRouter, HTTPException, status
 
 from app.database import usuarios_collection
-from feira2.backend.app.modelos import CadastroIn, LoginIn
-from feira2.backend.app.seguranca import criar_token_acesso, gerar_hash, verificar_senha
+from app.modelos import CadastroIn, LoginIn
+from app.seguranca import criar_token_acesso, gerar_hash, verificar_senha
 
 router = APIRouter(prefix="/api", tags=["Autenticação"])
 

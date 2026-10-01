@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import CORS_ORIGINS
 from app.routers import empreendedoras, usuarios
-from feira2.backend.app.routers import autentificacao
+from app.routers import autentificacao
 
 app = FastAPI(title="Elas em Rede API")
 

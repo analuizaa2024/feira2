@@ -1,219 +1,188 @@
 function goProject() {
-    window.location.href = "meuprojeto.html"; // ou o nome correto da sua página de projetos
-}document.addEventListener('DOMContentLoaded', () => {
-    // ==========================================
-    // 1. ESTADO INICIAL E LOCALSTORAGE
-    // ==========================================
-    const defaultProfile = {
-        name: "Juliana Silva",
-        role: "Fundadora & CEO da InovaMulher",
-        location: "São Paulo, SP",
-        bio: "Empreendedora apaixonada por tecnologia, inovação e impacto social. Ajudando mulheres a escalarem seus negócios no meio digital.",
-        website: "https://inovamulher.com.br",
-        linkedin: "linkedin.com/in/julianasilva",
-        instagram: "instagram.com/julianainova",
-        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300"
+    window.location.href = "meuprojeto.html";
+}
+
+(() => {
+    const API = "http://127.0.0.1:8000";
+    const KEY = "perfilElas";
+    const $ = (id) => document.getElementById(id);
+    const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+    // ---------- Dados do perfil (salvos no navegador) ----------
+    const logada = JSON.parse(localStorage.getItem("usuarioLogado") || "{}");
+    const padrao = {
+        name: logada.nome || "Elas Empreendedoras",
+        username: "@" + (logada.email ? logada.email.split("@")[0] : "elasempreendedoras"),
+        category: "Empreendedorismo feminino",
+        role: "", location: "", photo: "",
+        bio: "Organizando ideias, aprendizados e projetos para transformar inspiração em possibilidade.",
+        about: "", formacoes: [], experiencias: [],
+        goal: [false, false, false, false], atividades: [],
     };
+    let perfil = { ...padrao, ...JSON.parse(localStorage.getItem(KEY) || "{}") };
+    let projetos = [];
+    const salvar = () => localStorage.setItem(KEY, JSON.stringify(perfil));
+    const toast = (msg) => { const t = $("toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2200); };
+    const registrar = (texto) => { perfil.atividades.unshift({ texto, data: Date.now() }); perfil.atividades = perfil.atividades.slice(0, 30); };
+    const dataBr = (ms) => new Date(ms).toLocaleDateString("pt-BR");
+    const fotoCss = (el) => { el.style.background = perfil.photo ? `url(${perfil.photo}) center / cover` : ""; el.firstElementChild && (el.firstElementChild.style.display = perfil.photo ? "none" : ""); };
 
-    // Carregar dados salvos ou usar os padrões
-    function loadProfileData() {
-        const savedData = localStorage.getItem('elas_empreendedoras_profile');
-        return savedData ? JSON.parse(savedData) : defaultProfile;
+    // ---------- Renderização ----------
+    function renderPerfil() {
+        const letra = (perfil.name || "E").trim().charAt(0).toUpperCase();
+        $("profileName").textContent = perfil.name;
+        $("profileUsername").textContent = perfil.username;
+        $("profileCategory").textContent = perfil.category;
+        $("profileBio").textContent = perfil.bio;
+        $("avatarLetter").textContent = letra;
+        fotoCss($("avatar"));
+        $("aboutName").textContent = "Sobre mim";
+        $("aboutRole").textContent = perfil.role;
+        $("aboutPhoto").textContent = perfil.photo ? "" : letra;
+        $("aboutPhoto").style.background = perfil.photo ? `url(${perfil.photo}) center / cover` : "";
+        $("aboutText").textContent = perfil.about || perfil.bio;
+        $("aboutArea").textContent = perfil.category;
+        $("aboutLocation").textContent = perfil.location || "Local não informado";
+        $("aboutHandle").textContent = perfil.username;
+        renderLista("formacoes", "listFormacoes", "Nenhuma formação adicionada ainda.");
+        renderLista("experiencias", "listExperiencias", "Nenhuma experiência adicionada ainda.");
     }
 
-    function saveProfileData(data) {
-        localStorage.setItem('elas_empreendedoras_profile', JSON.stringify(data));
+    function renderLista(chave, destino, vazio) {
+        const itens = perfil[chave];
+        $(destino).innerHTML = itens.length ? itens.map((i, n) => `
+            <div class="cv-item">
+                <button class="cv-del" data-del="${chave}:${n}" aria-label="Remover">×</button>
+                <strong>${esc(i.titulo)}</strong>
+                <span>${esc([i.lugar, i.periodo].filter(Boolean).join(" · "))}</span>
+                ${i.desc ? `<p>${esc(i.desc)}</p>` : ""}
+            </div>`).join("") : `<div class="cv-empty">${vazio}</div>`;
     }
 
-    // Aplicar dados na DOM
-    function renderProfile(profile) {
-        const nameEl = document.querySelector('.profile-name');
-        const roleEl = document.querySelector('.profile-role');
-        const locationEl = document.querySelector('.profile-location');
-        const bioEl = document.querySelector('.profile-bio-text');
-        const avatarEl = document.querySelector('.profile-avatar');
-        
-        // Links sociais (se houver na página)
-        const webLink = document.querySelector('.social-link.website');
-        const liLink = document.querySelector('.social-link.linkedin');
-        const igLink = document.querySelector('.social-link.instagram');
-
-        if (nameEl) nameEl.textContent = profile.name;
-        if (roleEl) roleEl.textContent = profile.role;
-        if (locationEl) locationEl.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${profile.location}`;
-        if (bioEl) bioEl.textContent = profile.bio;
-        if (avatarEl && profile.avatar) avatarEl.src = profile.avatar;
-
-        if (webLink && profile.website) webLink.href = profile.website;
-        if (liLink && profile.linkedin) liLink.href = `https://${profile.linkedin.replace(/^https?:\/\//, '')}`;
-        if (igLink && profile.instagram) igLink.href = `https://${profile.instagram.replace(/^https?:\/\//, '')}`;
+    function renderProjetos(erro) {
+        $("metaProjects").textContent = $("projectCount").textContent = projetos.length;
+        $("projectsGrid").innerHTML = erro ? `<div class="empty"><h3>Não consegui carregar seus projetos</h3><p>Confira se a API está rodando.</p></div>`
+            : projetos.length ? projetos.map((p) => `
+                <article class="project-card">
+                    <div class="project-top"><span class="project-badge">${esc(p.categoria || "Projeto")}</span></div>
+                    <div class="project-name">${esc(p.nome_negocio)}</div>
+                    <p class="project-description">${esc(p.descricao || p.solucao || "")}</p>
+                    <div class="project-foot"><span class="project-stage">${esc(p.fase || "Ideia")}</span></div>
+                </article>`).join("")
+            : `<div class="empty"><h3>Nenhum projeto ainda</h3><p>Clique em “+ Novo projeto” para começar.</p></div>`;
+        renderAtividade();
     }
 
-    // Inicializar perfil na tela
-    let currentProfile = loadProfileData();
-    renderProfile(currentProfile);
-
-    // ==========================================
-    // 2. CONTROLE DE MODAIS (EDITAR PERFIL)
-    // ==========================================
-    const editProfileBtn = document.querySelector('#editProfileBtn'); // Ajuste o seletor conforme seu HTML
-    const editModal = document.querySelector('#editProfileModal');     // Ajuste o ID do modal
-    const closeModals = document.querySelectorAll('.close-modal, .btn-cancel');
-    const editForm = document.querySelector('#editProfileForm');
-
-    // Botão genérico para abrir edição caso não tenha ID específico
-    if (editProfileBtn && editModal) {
-        editProfileBtn.addEventListener('click', () => {
-            // Preencher o formulário com os dados atuais
-            if (editForm) {
-                editForm.name.value = currentProfile.name;
-                editForm.role.value = currentProfile.role;
-                editForm.location.value = currentProfile.location;
-                editForm.bio.value = currentProfile.bio;
-                editForm.website.value = currentProfile.website;
-                editForm.linkedin.value = currentProfile.linkedin;
-                editForm.instagram.value = currentProfile.instagram;
-            }
-            editModal.classList.add('active'); // Ou .show() dependendo do seu CSS
-        });
+    function renderAtividade() {
+        const dosProjetos = projetos.map((p) => ({
+            icone: "✦", texto: `Você cadastrou o projeto “${p.nome_negocio}”`, detalhe: p.categoria || "",
+            data: parseInt(String(p.id).slice(0, 8), 16) * 1000 || 0, // o _id do Mongo guarda a data de criação
+        }));
+        const locais = perfil.atividades.map((a) => ({ icone: "✎", texto: a.texto, detalhe: "", data: a.data }));
+        const todas = [...dosProjetos, ...locais].sort((a, b) => b.data - a.data);
+        $("activityList").innerHTML = todas.length ? todas.map((a) => `
+            <div class="activity"><div class="activity-icon">${a.icone}</div>
+            <div><strong>${esc(a.texto)}</strong><span>${esc(a.detalhe)}</span></div>
+            <time>${a.data ? dataBr(a.data) : ""}</time></div>`).join("")
+            : `<div class="cv-empty">Sua atividade aparece aqui: projetos criados e mudanças no perfil.</div>`;
     }
 
-    // Fechar modais
-    closeModals.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const modal = btn.closest('.modal');
-            if (modal) modal.classList.remove('active');
-        });
+    function renderMeta() {
+        const feitas = perfil.goal.filter(Boolean).length, pct = Math.round((feitas / 4) * 100);
+        document.querySelectorAll("[data-goal]").forEach((c) => (c.checked = perfil.goal[c.dataset.goal - 1]));
+        $("goalBar").style.width = pct + "%";
+        $("goalText").textContent = `${feitas} de 4 etapas`;
+        $("goalPercent").textContent = pct + "%";
+        $("metaProgress").textContent = pct + "%";
+    }
+
+    async function carregarProjetos() {
+        try {
+            const r = await fetch(`${API}/api/empreendedoras/usuario/1`); // TODO: trocar pelo id da usuária logada
+            projetos = r.ok ? await r.json() : [];
+            renderProjetos(!r.ok);
+        } catch { renderProjetos(true); }
+    }
+
+    // ---------- Abas ----------
+    function abrirAba(nome) {
+        document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t.dataset.tab === nome));
+        document.querySelectorAll(".tab-content").forEach((c) => c.classList.toggle("active", c.id === nome));
+    }
+    document.querySelectorAll(".tab").forEach((t) => t.addEventListener("click", () => abrirAba(t.dataset.tab)));
+
+    // ---------- Editar perfil ----------
+    const campos = { editName: "name", editUsername: "username", editCategory: "category", editLocation: "location", editBio: "bio", editAbout: "about", editRole: "role" };
+    function abrirPerfil() {
+        for (const [id, chave] of Object.entries(campos)) $(id).value = perfil[chave] || "";
+        $("profileModal").classList.add("show");
+    }
+    const fecharPerfil = () => $("profileModal").classList.remove("show");
+    ["editProfileBtn2", "quickProfile"].forEach((id) => $(id).addEventListener("click", abrirPerfil));
+    ["closeProfile", "cancelProfile"].forEach((id) => $(id).addEventListener("click", fecharPerfil));
+
+    // Reduz a foto para 300px antes de guardar, para não lotar o armazenamento do navegador
+    const lerFoto = (arquivo) => new Promise((ok) => {
+        const img = new Image(), url = URL.createObjectURL(arquivo);
+        img.onload = () => {
+            const lado = Math.min(img.width, img.height), c = document.createElement("canvas");
+            c.width = c.height = 300;
+            c.getContext("2d").drawImage(img, (img.width - lado) / 2, (img.height - lado) / 2, lado, lado, 0, 0, 300, 300);
+            URL.revokeObjectURL(url);
+            ok(c.toDataURL("image/jpeg", 0.8));
+        };
+        img.src = url;
     });
 
-    // Salvar formulário de edição de perfil
-    if (editForm) {
-        editForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            currentProfile = {
-                ...currentProfile,
-                name: editForm.name.value,
-                role: editForm.role.value,
-                location: editForm.location.value,
-                bio: editForm.bio.value,
-                website: editForm.website.value,
-                linkedin: editForm.linkedin.value,
-                instagram: editForm.instagram.value
-            };
-
-            saveProfileData(currentProfile);
-            renderProfile(currentProfile);
-
-            if (editModal) editModal.classList.remove('active');
-            
-            // Feedback opcional
-            showToast("Perfil atualizado com sucesso!");
-        });
-    }
-
-    // ==========================================
-    // 3. NAVEGAÇÃO ENTRE ABAS (TABS)
-    // ==========================================
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = button.getAttribute('data-tab');
-
-            // Remover classe active de todos
-            tabButtons.button?.classList?.remove('active'); // segurança
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-
-            // Adicionar no atual
-            button.classList.add('active');
-            const targetContent = document.querySelector(`#${targetTab}`);
-            if (targetContent) targetContent.classList.add('active');
-        });
+    $("saveProfile").addEventListener("click", async () => {
+        for (const [id, chave] of Object.entries(campos)) perfil[chave] = $(id).value.trim();
+        if (perfil.username && !perfil.username.startsWith("@")) perfil.username = "@" + perfil.username;
+        const arq = $("editPhoto").files[0];
+        if (arq) perfil.photo = await lerFoto(arq);
+        registrar("Você atualizou seu perfil");
+        salvar(); renderPerfil(); renderAtividade(); fecharPerfil();
+        toast("Perfil atualizado!");
     });
 
-    // ==========================================
-    // 4. SISTEMA DE BUSCA / FILTRO DE PROJETOS
-    // ==========================================
-    const searchInput = document.querySelector('#searchInput');
-    const projectCards = document.querySelectorAll('.project-card'); // Ajuste a classe dos cards
-
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase().trim();
-
-            projectCards.forEach(card => {
-                const title = card.querySelector('.project-title')?.textContent.toLowerCase() || "";
-                const description = card.querySelector('.project-desc')?.textContent.toLowerCase() || "";
-
-                if (title.includes(term) || description.includes(term)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    }
-
-    // ==========================================
-    // 5. MODAL DE DETALHES DO PROJETO
-    // ==========================================
-    const projectDetailsModal = document.querySelector('#projectDetailsModal');
-    const viewProjectBtns = document.querySelectorAll('.view-project-btn');
-
-    viewProjectBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const card = e.target.closest('.project-card');
-            if (!card || !projectDetailsModal) return;
-
-            // Extrair dados do card clicado
-            const title = card.querySelector('.project-title')?.textContent || "Projeto";
-            const desc = card.querySelector('.project-desc')?.textContent || "Sem descrição.";
-            const category = card.querySelector('.project-category')?.textContent || "Geral";
-
-            // Popular modal de detalhes
-            const modalTitle = projectDetailsModal.querySelector('.modal-project-title');
-            const modalDesc = projectDetailsModal.querySelector('.modal-project-desc');
-            const modalCat = projectDetailsModal.querySelector('.modal-project-category');
-
-            if (modalTitle) modalTitle.textContent = title;
-            if (modalDesc) modalDesc.textContent = desc;
-            if (modalCat) modalCat.textContent = category;
-
-            projectDetailsModal.classList.add('active');
-        });
+    // ---------- Formação e experiência ----------
+    let tipoAtual = "formacoes";
+    const rotulos = { formacoes: ["Adicionar formação", "Curso", "Instituição"], experiencias: ["Adicionar experiência", "Cargo", "Empresa"] };
+    document.querySelectorAll("[data-add]").forEach((b) => b.addEventListener("click", () => {
+        tipoAtual = b.dataset.add;
+        [$("itemModalTitle").textContent, $("lblTitulo").textContent, $("lblLugar").textContent] = rotulos[tipoAtual];
+        ["itemTitulo", "itemLugar", "itemPeriodo", "itemDesc"].forEach((id) => ($(id).value = ""));
+        $("itemModal").classList.add("show");
+    }));
+    const fecharItem = () => $("itemModal").classList.remove("show");
+    ["closeItem", "cancelItem"].forEach((id) => $(id).addEventListener("click", fecharItem));
+    $("saveItem").addEventListener("click", () => {
+        const titulo = $("itemTitulo").value.trim();
+        if (!titulo) return toast("Preencha o " + rotulos[tipoAtual][1].toLowerCase());
+        perfil[tipoAtual].push({ titulo, lugar: $("itemLugar").value.trim(), periodo: $("itemPeriodo").value.trim(), desc: $("itemDesc").value.trim() });
+        registrar(`Você adicionou “${titulo}” ao seu currículo`);
+        salvar(); renderPerfil(); renderAtividade(); fecharItem();
+    });
+    $("about").addEventListener("click", (e) => {
+        const d = e.target.dataset.del;
+        if (!d) return;
+        const [chave, n] = d.split(":");
+        perfil[chave].splice(Number(n), 1);
+        salvar(); renderPerfil();
     });
 
-    // ==========================================
-    // UTILITÁRIO: TOAST NOTIFICAÇÃO SIMPLES
-    // ==========================================
-    function showToast(message) {
-        const toast = document.createElement('div');
-        toast.className = 'toast-notification';
-        toast.textContent = message;
-        
-        // Estilização básica via JS caso não tenha no CSS
-        Object.assign(toast.style, {
-            position: 'fixed',
-            bottom: '20px',
-            right: '20px',
-            background: '#10B981',
-            color: '#fff',
-            padding: '12px 20px',
-            borderRadius: '8px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-            zIndex: '9999',
-            fontFamily: 'inherit',
-            transition: 'opacity 0.3s ease'
-        });
+    // ---------- Meta, atalhos e compartilhar ----------
+    document.querySelectorAll("[data-goal]").forEach((c) => c.addEventListener("change", () => {
+        perfil.goal[c.dataset.goal - 1] = c.checked; salvar(); renderMeta();
+    }));
+    $("resetGoal").addEventListener("click", () => { perfil.goal = [false, false, false, false]; salvar(); renderMeta(); });
+    $("quickProject").addEventListener("click", goProject);
+    $("emptyCreateBtn") && $("emptyCreateBtn").addEventListener("click", goProject);
+    $("quickHome").addEventListener("click", () => (window.location.href = "Home.html"));
+    $("quickScroll").addEventListener("click", () => { abrirAba("projects"); $("projects").scrollIntoView({ behavior: "smooth" }); });
+    $("shareProfileBtn").addEventListener("click", () => {
+        navigator.clipboard?.writeText(window.location.href).then(() => toast("Link copiado!"), () => toast("Não foi possível copiar o link"));
+    });
 
-        document.body.appendChild(toast);
-
-        setTimeout(() => {
-            toast.style.opacity = '0';
-            setTimeout(() => toast.remove(), 300);
-        }, 3000);
-    }
-});
+    // ---------- Início ----------
+    renderPerfil(); renderMeta(); carregarProjetos();
+})();
